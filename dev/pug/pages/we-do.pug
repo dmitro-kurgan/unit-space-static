@@ -1,0 +1,214 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Outsource, outstaff — Украина | Unit Space'
+  - var pageClass = 'we-do'
+  - var pageWrapper = 'we-do'
+  - var pageFooter = '#section5'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='Что мы делаем - Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content.we-do
+      section#section0.section.services
+        .container
+          h1.main-title.wow.fadeInLeft Услуги
+          ul.row.services__box
+            mixin services(name, text)
+              li.col-md-3
+                div
+                  .services__box-img.wow.fadeIn(data-wow-duration='2s')
+                    span
+                  p.services__box-txt.wow.fadeIn(data-wow-duration='2s')= name
+                  p.services__box-hidden.wow.fadeIn(data-wow-duration='2s')= text
+            +services('Web-разработка', 'Эффективные инструменты для решения Ваших задач в интернете. Сайты, порталы, интерфейсы, интернет-магазины под ключ.')
+            +services('Мобильные приложения', 'Разработка мобильных приложения на базе iOS и Android.')
+            +services('Брендинг и дизайн', 'Спроектируем и нарисуем дизайн сайта. Красиво, удобно и просто, не потеряв суть задачи.')
+            +services('Outstaff/Outsource', 'Привлечение новых клиентов с помощью поисковой оптимизации и контекстной рекламы')
+      section#section1.section.our-tech
+        .container
+          h1.main-title Our Core Technologies
+          .our-tech__block
+            ul.our-tech__display
+              li.col-md-6
+              li.col-md-6
+                img(src='./static/images/content/we-do/empty-mac.png', alt='')
+            section.our-tech__slider.slider
+              mixin sliderTech(name, by, info, img)
+                div
+                  ul.row
+                    li.col-md-6
+                      .our-tech__slider-left
+                        div
+                          h5= name
+                          span= by
+                          p= info
+                    li.col-md-6
+                      .our-tech__slider-right
+                        img(src='./static/images/content/we-do/' + img + '.png', alt= img)
+              +sliderTech('node.js', 'Developed by Google', 'A mobile application framework using HTML5 and AngularJS.', 'node')
+              +sliderTech('python', 'Developed by Google', 'A mobile application framework using HTML5 and AngularJS.', 'python')
+              +sliderTech('laravel', 'Developed by Google', 'A mobile application framework using HTML5 and AngularJS.', 'laravel')
+              +sliderTech('ANGULAR.JS', 'Developed by Google', 'A mobile application framework using HTML5 and AngularJS.', 'angular')
+              +sliderTech('REACT.JS', 'Developed by Facebook', 'A Javascript MVC Framework for enhancing web and mobile applications.', 'react')
+      section#section2.section.coop-types
+        h1.main-title.wow.fadeInLeft Виды сотрудничества
+        ul.row
+          mixin coopTypes(className, img, title, text, link, id)
+            li.col-md-6
+              div(class='coop-types__' + className, style='background-image: url(' + ('./static/images/content/we-do/' + img + '.jpg') + ')')
+                .coop-types__box
+                  h2= title
+                  .coop-types__inner
+                    div
+                      h3= title
+                      p= text
+                      a.btn(href= link, id= id) Связаться с нами
+          +coopTypes('left', 'background-coop-1', 'Outsource', 'Имея в своем распоряжении широкий спектр разноплановых специалистов, наша компания готова брать на себя часть работ по проекту или же отдельные проекты целиком. Рациональный подход к использованию бюджетов компании и человеческого ресурса поможет вам в разумном распределении времени и средств. Если вы будете Бэтменом, мы станем вашим Робином.', '#', 'contactUs')
+          +coopTypes('right', 'background-coop-2', 'Outstaff', 'Имея в своем распоряжении широкий спектр разноплановых специалистов, наша компания готова брать на себя часть работ по проекту или же отдельные проекты целиком. Рациональный подход к использованию бюджетов компании и человеческого ресурса поможет вам в разумном распределении времени и средств. Если вы будете Бэтменом, мы станем вашим Робином.', '#', 'contactUs2')
+      section#section3.section.team-str
+        .container
+          h1.main-title.wow.fadeInLeft Наши специалисты
+          p.title-txt
+            | Для достижения максимального результата и успеха вашего проекта Вам понадобятся компетентные и мотивированные профессионалы.
+          h2.sec-title Специалисты, которые могут стать частью вашей команды:
+          .team-str__block
+            ul.row
+              mixin team(post, text)
+                li.col-md-4
+                  .team-str__block-box
+                    span.team-str__block-img
+                    p.team-str__block-txt= post
+                    p.team-str__block-hidden= text
+              +team('Backend-разработчики', 'Программирование и создание серверной части')
+              +team('Frontend-разработчики', 'Разработка интерфейса и браузерной части сайта')
+              +team('Графический дизайнер', 'Разработка уникальных дизайнерских решений')
+              +team('Quality Assurance Engineers', 'Обеспечение качества ПО, тестирование и предотвращение дефектов и ошибок')
+              +team('Scrum Master', 'Обеспечивает взаимодействие скрам-команды и оптимизируют процессы')
+              +team('Product Owner', 'Ответственный за разработку продукта')
+      section.section.process(id='section4')
+        .container
+          h1.main-title Процесс работы
+          p.second-title These phases are integral to your success.
+          ul.row
+            mixin processList(title, text, link)
+              li.col-md-3
+                .process__box
+                  span.process__box-img
+                  h4.process__box-title= title
+                  p.process__box-txt= text
+                  a.btn(href='agile.html#' + link) Подробнее
+            +processList('01. Старт', 'Первым делом мы внимательно выслушиваем ваши пожелания, цели и суть проекта, уточняем детали и делаем первые предложения о выполнении проекта.', 'secondPage')
+            +processList('02. Согласование плана', 'Вы утверждаете предложенный нами план работ, фирменный стиль, контент, определяемся с функционалом, фазами выполнения проекта и двигаемся вперед.', '3rdPage')
+            +processList('03. Ваш отклик', 'Быть постоянно в тесном контакте – это путь к успеху. Мы проводим личные встречи на каждом этапе процесса разработки. Все для того чтобы создать качественный продукт превышающий Ваши ожидания.', '4thpage')
+            +processList('04. Запуск', 'После того, как предыдущие этапы завершены успешно, мы запускаем проект и получаем первые результаты.', '5thpage')
+      include ../modules/footer
+block script
+  script(src='static/js/jquery.fullPage.min.js')
+  script(src='static/js/slick.min.js')
+  script(src='static/js/wow.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js')
+  script(src='static/js/smokie.js')
+  script(type='text/javascript').
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //SLICK SLIDER
+    $(document).ready(function(){
+      $('.our-tech__slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+      });
+    });
+    //FULLPAGE
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        navigation: true,
+        scrollBar: true,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
+        loopBottom: true,
+        loopTop: true,
+        responsiveWidth: 992,
+        responsiveHeight: 620,
+        scrollingSpeed: 900,
+        normalScrollElements: '.clients__right__box',
+        onLeave: function() {
+          soundMenu();
+        }
+      });
+    });
+    // --------------SCROLL-CHANGE-COLOR-------------------
+    jQuery(document.URL.indexOf('we-do.html')).ready(function($) {
+      var index = 'we-do.html' + '#',
+      icon = document.getElementById('MenuIcon'),
+      order = document.getElementById('MenuOrder'),
+      logo = document.getElementById('HeaderLogo'),
+      h = document.getElementsByClassName('header')[0],
+      b = 'black',
+      hw = 'header-white',
+      hb = 'header-black',
+      totop = document.getElementById('back-to-top'),
+      nav = $("#fp-nav ul li a span");
+      $(window).scroll(function() {
+        if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + '4thpage') >= 0)  {
+          icon.className += ' ' + b;
+          order.className += ' ' + b;
+          h.classList.remove(hb);
+          h.classList.remove(hw);
+          h.className += ' ' + hw
+          nav.addClass('black-fp-nav');
+          totop.classList.remove(b);
+          totop.className += ' ' + b;
+        }
+        else {
+          icon.classList.remove(b);
+          order.classList.remove(b);
+          h.classList.remove(hw);
+          h.classList.remove(hb);
+          h.className += ' ' + hb;
+          nav.removeClass('black-fp-nav');
+          totop.classList.remove(b);
+        }
+      });
+    });
+    //WOW
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 0,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    //CHANGE MOBILE
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

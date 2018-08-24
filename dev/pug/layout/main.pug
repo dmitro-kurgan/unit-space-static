@@ -1,0 +1,87 @@
+include ../mixins
+
+block variables
+
+- var tel = '+380639993211'
+- var mail= 'info@unitspace.top'
+- var fb = 'https://www.facebook.com/unitspace.top'
+- var telegram = 'https://t.me/vlad_9779'
+
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name='keywords', content='Unit space')
+		block description
+		//- link(rel='stylesheet', href='libs/jquery.form-sender/css/intlTelInput.css')
+		link(rel='apple-touch-icon', sizes='57x57', href='./static/images/favicon/apple-icon-57x57.png')
+		link(rel='apple-touch-icon', sizes='60x60', href='./static/images/favicon/apple-icon-60x60.png')
+		link(rel='apple-touch-icon', sizes='72x72', href='./static/images/favicon/apple-icon-72x72.png')
+		link(rel='apple-touch-icon', sizes='76x76', href='./static/images/favicon/apple-icon-76x76.png')
+		link(rel='apple-touch-icon', sizes='114x114', href='./static/images/favicon/apple-icon-114x114.png')
+		link(rel='apple-touch-icon', sizes='120x120', href='./static/images/favicon/apple-icon-120x120.png')
+		link(rel='apple-touch-icon', sizes='144x144', href='./static/images/favicon/apple-icon-144x144.png')
+		link(rel='apple-touch-icon', sizes='152x152', href='./static/images/favicon/apple-icon-152x152.png')
+		link(rel='apple-touch-icon', sizes='180x180', href='./static/images/favicon/apple-icon-180x180.png')
+		link(rel='icon', type='image/png', sizes='192x192', href='./static/images/favicon/android-icon-192x192.png')
+		link(rel='icon', type='image/png', sizes='32x32', href='./static/images/favicon/favicon-32x32.png')
+		link(rel='icon', type='image/png', sizes='96x96', href='./static/images/favicon/favicon-96x96.png')
+		link(rel='icon', type='image/png', sizes='16x16', href='./static/images/favicon/favicon-16x16.png')
+		link(rel='manifest', href='./static/images/favicon/manifest.json')
+		meta(name='msapplication-TileColor', content='#ffffff')
+		meta(name='msapplication-TileImage', content='./static/images/favicon/ms-icon-144x144.png')
+		meta(name='theme-color', content='#ffffff')
+		// Global Site Tag (gtag.js) - Google Analytics
+		script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-89245124-3')
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments)};
+			gtag('js', new Date());
+			gtag('config', 'UA-89245124-3');
+		link(rel="stylesheet" type='text/css' href="static/css/" + styleCSS + '.css?v=34')
+
+		// ===========[if lt IE 9]=================
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+		<![endif]-->
+	body(class=pageClass)
+		block preloader
+		// =====================MAIN CONTENT========================
+		div(class='wrapper ' + 'wrapper--' + pageWrapper)
+			include ../modules/header
+			.content
+				block content
+			// =====================BUTTON-TO-TOP========================
+			a#back-to-top.btn-primary.back-to-top(href='#', role='button', title='', data-toggle='tooltip', data-placement='left')
+				i.arrow
+			// ========================POPUP-THANKS-ORDER=======================
+			#order-thanks-popup.order-thanks-popup.modal.fade(role='dialog')
+				.modal-dialog.comment-modal
+					.modal-content
+						.modal-img
+						.modal-title
+						.modal-text
+		script(src="static/js/jquery.js")
+		script(src="static/js/libs.min.js")
+		script(src='static/js/bootstrap.min.js')
+		script(src="static/js/main.js")
+		script(src='static/js/jquery.form-sender.js')
+		script(src='static/js/intlTelInput.min.js')
+		script(src='static/js/intel.js')
+		block script
+		block addscript
+			script(type='text/javascript').
+				//<![CDATA[
+				var google_conversion_id = 827083556;
+				var google_custom_params = window.google_tag_params;
+				var google_remarketing_only = true;
+				//]]>
+			script(type='text/javascript', src='//www.googleadservices.com/pagead/conversion.js')
+			noscript
+				div(style='display:inline;')
+					img(height='1', width='1', style='border-style:none;', alt='', src='//googleads.g.doubleclick.net/pagead/viewthroughconversion/827083556/?guid=ON&script=0')

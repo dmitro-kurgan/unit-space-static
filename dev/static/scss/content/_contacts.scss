@@ -1,0 +1,55 @@
+.wrapper {
+	&--contacts { 
+		@media screen and(max-width: 991px) {
+			.header {
+				background-color: #000;
+			}
+			.footer {
+				&-left, &-right {
+					@media screen and (max-width: 991px) {
+						padding: 40px;
+					}
+				}
+				&-right {
+					@media screen and (max-width: 991px) {
+						background-color: #000;
+						h3 {
+							font-size: 29px;
+						}
+					}
+				}
+			}
+		}
+		.ms-section {
+			position: relative;
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+	    	display: table;
+   			width: 100%;
+   			height: 100%;
+		}
+		.ms-right, .ms-left {
+		    width: 50%;
+		    position: absolute;
+		    height: 100%;
+		    touch-action: none;
+		    @media screen and(max-width: 991px) {
+		    	width: 100%;
+		    	position: initial;
+		    	touch-action: auto;
+		    }
+		}
+		.ms-right {
+			right: 1px;
+		}
+		.ms-left {
+		    left: 0px;
+		}
+		.ms-tableCell {
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

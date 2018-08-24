@@ -1,0 +1,75 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Контакты Unit Space — разработка и создание сайтов'
+  - var pageClass = 'contacts-page'
+  - var pageWrapper = 'contacts'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='Контакты — Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #wrapperPage
+    .content.web-dev-pg.contacts
+      .ms-left
+        #left6.ms-section.left-section.footer-left
+          .ms-tableCell
+            .footer-left__main
+              h3 Свяжитесь с нами
+              p
+                | Для того, чтобы связаться с нами,
+                br
+                | пожалуйста, заполните следующую форму.
+              +form
+      .ms-right
+        #right6.ms-section.footer-right
+          .ms-tableCell
+            .footer-right__main
+              h3 Наши контакты
+              ul
+                li
+                  p Харьков, пл. Защитников Украины, 7
+                li
+                  p
+                    | Телефон:
+                    a(href='tel:' + tel) +380639993211
+                li
+                  p
+                    | Email:
+                    a(href='mailto:' + mail) info@unitspace.top
+              .footer-right__c
+                p
+                  | Unit Space ©
+                  span#year
+              .footer-right__socials
+                ul
+                  +contacts
+block script
+  script(type='text/javascript').
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+      console.log('3');
+      el.style.opacity = 1;
+      var interhellopreloader = setInterval(function() {
+      el.style.opacity = el.style.opacity - 0.05;
+      if (el.style.opacity <=0.05) {
+      	clearInterval(interhellopreloader);
+      	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    }
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //- ---------MOBILE-MENU------------
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

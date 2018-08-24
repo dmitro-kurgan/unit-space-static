@@ -1,0 +1,135 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Разработка сайтов и интернет-магазинов'
+  - var pageClass = 'web-dev-page'
+  - var pageWrapper = 'web-dev-mob'
+  - var pageFooter = '#section5'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='Web development - Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content.web-dev-pg
+      section#section0.section.custom-web-dev.active
+        .container
+          .custom-web-dev__block
+            h2 01. CUSTOM WEB DEVELOPMENT
+            p
+              | Наша опытная команда разработает для вас по-настоящему особенный проект. Создание нового бренда, обеспечение его присутствия в сети, продвижение товара или услуги, поддержка имиджа компании или создание многофункционального интернет-магазина – это лишь часть того, чем мы можем быть полезны для вас. Мы не используем шаблоны или подобный подход в целом. Каждый наш сайт – уникален и неповторим.
+      section#section1.section.e-commerce
+        .container
+          .e-commerce__block
+            h2.wow.fadeInDown E-Commerce
+            p.wow.fadeIn(data-wow-delay='0.25s')
+              | Сфера услуг интернет-торговли – одна из наиболее растущих и востребованных сфер в мире. Неудивительно, что многие люди обращают внимание на эту сферу в качестве начала нового или развития существующего бизнеса. Создание интернет магазинов, от небольших проектов до масштабов международного гиганта – мы поможем пройти Вам этот путь.
+      section#section2.section.mob-back
+        .container
+          .mob-back__block
+            h2.wow.fadeInDown Mobile Backend & APIs
+            p.wow.fadeIn(data-wow-delay='0.5s')
+              | Мы предоставляем вам возможность создавать масштабные бэкэнд-системы, управляемые API-архитектурой, используем возможности различных фреймворков, которые соответствуют бизнес потребностям и конкретным целям, чтобы в итоге создать единый источник данных для обработки нескольких приложений.
+      section#section3.section.cms
+        .container
+          .cms__block
+            h2.wow.fadeInDown Система Управления Содержимым
+            p.wow.fadeIn(data-wow-delay='0.75s')
+              | Уникальность проекта напрямую зависит от его содержания. Мы разработаем оригинальный движок сайта, который будет наилучшим образом удовлетворять потребности вашего проекта в предоставлении пользователю максимально удобного и дружелюбного функционала и содержания.
+      section#section4.section.we-work
+        .container
+          .we-work__block
+            h2 Web Technologies We Work With
+            p
+              | In-house specialists of contemporary technologies that encapsulates server-side and front-end stacks.
+            .we-work__box.clearfix
+              ul
+                - var tech = ['python', 'ruby', 'php', 'node', 'go', 'mvc', 'django', 'rails', 'laravel', 'symfony', 'angular', 'react', 'wordpress', 'drupal', 'joomla', 'opencart', 'sass', 'webpack']
+                each name in tech
+                  li
+                    img(src="./static/images/content/web-dev/images/" + name + '.png', alt= name)
+      include ../modules/footer
+block script
+  script(src='static/js/jquery.fullPage.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js')
+  script(src='static/js/smokie.js')
+  script(src='static/js/wow.min.js')
+  script(type='text/javascript').
+    //RESIZE
+    $(window).bind('resize', function () {
+      if ($(window).width() > 992) {
+         location.href="web-dev.html";
+      }
+    }).trigger('resize');
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+      console.log('3');
+      el.style.opacity = 1;
+      var interhellopreloader = setInterval(function() {
+        el.style.opacity = el.style.opacity - 0.05;
+        if (el.style.opacity <=0.05) {
+      	 clearInterval(interhellopreloader);
+      	 $(hellopreloader).parent().parent().hide();
+      	}
+      },16);
+    }
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //FULLPAGE
+    $('#fullpage').fullpage({
+      navigation: true,
+      scrollBar: true,
+      anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
+      loopBottom: true,
+      loopTop: true,
+      responsiveWidth: 992,
+      responsiveHeight: 620,
+      scrollingSpeed: 900,
+      normalScrollElements: '.clients__right__box'
+    });
+    jQuery(document.URL.indexOf('web-dev-mob.html')).ready(function($) {
+      var index = 'web-dev-mob.html' + '#';
+      icon = document.getElementById('MenuIcon'),
+      order = document.getElementById('MenuOrder'),
+      logo = document.getElementById('HeaderLogo'),
+      h = document.getElementsByClassName('header')[0],
+      logo = document.getElementById('HeaderLogo'),
+      back = document.getElementById('back-to-top'),
+      b = 'black',
+      hw = 'header-white',
+      hb = 'header-black',
+      $(window).scroll(function(){
+        if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + '4thpage') >= 0)  {
+          icon.className += ' ' + b;
+          order.className += ' ' + b;
+          h.classList.remove(hb);
+              h.classList.remove(hw);
+          h.className += ' ' + hw;
+          back.className += ' ' + b
+        }
+        else {
+          icon.classList.remove(b);
+          order.classList.remove(b);
+          h.classList.remove(hb);
+          h.classList.remove(hw);
+          h.className += ' ' + hb;
+          back.classList.remove(b);
+        }
+      });
+    });
+    //ADD CLASS TO HEADER MENU
+    //CHANGE MOBILE
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

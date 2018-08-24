@@ -1,0 +1,153 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Компания Unit Space — разработка сайтов, мобильных приложений'
+  - var pageClass = 'aboutus-page'
+  - var pageWrapper = 'aboutus'
+  - var pageFooter = '#section2'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='О нас - Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content.aboutus
+      section#section0.section.banner
+        .banner__top
+          .container
+            h1
+              | Hello!
+              br
+              | Here we are.
+        .banner__bottom
+          .container
+            h2 О нас
+            ul
+              li
+                p
+                  | Unit Space - международная компания, занимающаяся комплексной разработкой полного цикла. Наша специализация: создание и продвижение веб и мобильных приложений с объектами R & D (research and development).За более чем 2 года мы реализовали свыше 100 проектов для различных сфер бизнеса:
+              li
+                p
+                  | начиная с продажи услуг и товаров и заканчивая созданием искусственного интеллекта. Над каждым проектом работает команда высококвалифицированных разработчиков и инженеров QA. Именно такая структура позволяет быстро, точно и качественно решить поставленные задачи и реализовать проект на высоком уровне.
+      section#section1.section.team
+        .container
+          h1.main-title.wow.slideInLeft(data-wow-duration='1s') Команда
+          .team__box
+            span.team__box-shadow.wow.fadeIn(data-wow-duration='1s', data-wow-delay='0.25s')
+            section.team-slider.center.slider
+              mixin sliderTeam(delay, img, alt, name, post)
+                div
+                  .team-slider__box.wow.fadeIn(data-wow-duration='2s', data-wow-delay= delay)
+                    .team-slider__box-img
+                      img(src='./static/images/content/main-page/team/' + img, alt= alt)
+                    h3.team-slider__box-name= name
+                    p.team-slider__box-post= post
+              +sliderTeam('1s', 'CEO.png', 'Vladislav Rudas', 'Владислав Рудась', 'CEO - Unit Space')
+              +sliderTeam('1.5s', 'COO.png', 'Vladislav Romanov', 'Владислав Романов', 'COO - Unit Space')
+              +sliderTeam('1.5s', 'CISO.png', 'Dmitro Kurgan', 'Дмитрий Курган', 'Product Manager - Unit Space')
+              +sliderTeam('1.5s', 'ART.png', 'Olga Regetsyi', 'Ольга Регеций', 'Head of UX & Design - Unit Space')
+              +sliderTeam('1.5s', 'CTO.png', 'Vladislav Kryzhnyi', 'Владислав Крыжний', 'CTO - Unit Space')
+      include ../modules/footer
+block script
+  script(type='text/javascript', src='static/js/jquery.fullPage.min.js')
+  script(type='text/javascript', src='static/js/slick.min.js')
+  script(type='text/javascript', src='static/js/wow.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js')
+  script(type='text/javascript', src='static/js/smokie.js')
+  script(type='text/javascript').
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //FULLPAGE
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+          navigation: true,
+          scrollBar: true,
+          anchors: ['firstPage', 'secondPage', '3rdPage', 'lastPage'],
+          loopBottom: true,
+          loopTop: true,
+          responsiveWidth: 992,
+          responsiveHeight: 620,
+          scrollingSpeed: 900,
+          normalScrollElements: '.clients__right',
+          onLeave: function() {
+            soundMenu();
+          }
+      });
+      //COLOR-CHANGE
+      jQuery(document.URL.indexOf('aboutus.html')).ready(function($) {
+        var index = 'aboutus.html' + '#',
+        icon = document.getElementById('MenuIcon'),
+        order = document.getElementById('MenuOrder'),
+        logo = document.getElementById('HeaderLogo'),
+        h = document.getElementsByClassName('header')[0],
+        b = 'black',
+        hw = 'header-white',
+        hb = 'header-black',
+        nav = $("#fp-nav ul li a span");
+        $(window).scroll(function() {
+            if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + '3rdPage') >= 0) {
+                h.classList.remove(hb);
+                h.className += ' ' + hb;
+            }
+            else {
+                icon.classList.remove(b);
+                order.classList.remove(b);
+                h.classList.remove(hb);
+                nav.removeClass('black-fp-nav');
+            }
+        });
+      });
+    });
+    //Slick-Slider
+    $('.center').slick({
+      centerMode: true,
+      centerPadding: '0px',
+      slidesToShow: 3,
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+          centerMode: false,
+          slidesToShow: 1
+          }
+        }
+      ]
+    });
+    //WOW
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 0,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    //CHANGE MOBILE
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

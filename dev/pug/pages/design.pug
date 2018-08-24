@@ -1,0 +1,230 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Создание логотипа, фирменного стиля, дизайн | Unit Space'
+  - var pageClass = 'design-page'
+  - var pageWrapper = 'design'
+  - var pageFooter = '#section5'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='Дизайн — Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content.design
+      section#section0.section.design__solutions.active
+        .container
+          h2.main-title We offer unique solutions
+          p
+            | Unit Space – компания, предоставляющая полный спектр услуг, включая дизайнерские решения для вашего проекта. Мы тщательно следим за мировыми тенденциями, и, учитывая пожелания нашего клиента, предоставляем варианты дизайнерских решений, которые способны вдохнуть жизнь в проект.
+          ul.design__solutions-list
+            li
+              a(href='#secondPage')
+                span
+                p 01. Брендинг
+            li
+              a(href='#3rdPage')
+                span
+                p Дизайн Веб-сайта
+            li
+              a(href='#4thpage')
+                span
+                p UX/UI Design
+        .design__solutions-arrow
+          a(href='#secondPage')
+            span
+      section#section1.section.design__branding
+        .container
+          .row
+            .design__branding-block
+              .col-md-6
+                .design__branding-title
+                  h3
+                    span BR
+                    span AN
+                    span DI
+                    span NG
+                  span.text1
+              .col-md-6
+                h2 01. Брендинг
+                p
+                  | Создать идею это лишь полдела. Сформулировать ее, дать имя, нарисовать торговый знак и, что самое главное, разработать стратегию маркетинга и сопутствующего продвижения – это основополагающая работа, которую наша команда всегда выполняет с вдохновением. Брендинг – это комплекс мероприятий, который позволит вашему продукту обрести привлекательность и узнаваемость в глазах клиента.
+        .design__branding-load
+          div
+            span.small
+            span.big
+          div
+            span.small
+            span.big
+          div
+            span.small
+            span.big
+          div
+            span.small
+            span.big
+      section#section2.section.design__website-design
+        .container
+          .row
+            .design__website-design-block
+              .col-sm-12.col-md-6.col-md-push-6
+                .design__website-design-title
+                  h3
+                    span web
+                    span si
+                    span te
+                  span.text2
+              .col-sm-12.col-md-6.col-md-pull-6
+                h2 02. Дизайн Веб-сайта
+                p
+                  | Уникальность и адаптивность – залог успеха и узнаваемости бренда. Мы создаем для вас оригинальный почерк, с помощью которого ваш сайт становится неординарным проектом, обладающим своей харизмой. Для владельцев уже существующих сайтов, которые хотят идти в ногу со временем и следовать успешным трендам, мы предоставляем услугу редизайна.
+        #load2.design__branding-load
+          div
+            span.small2
+            span.big2
+          div
+            span.small2
+            span.big2
+          div
+            span.small2
+            span.big2
+          div
+            span.small2
+            span.big2
+      section#section3.section.design__ux-ui
+        .container
+          .row
+            .design__ux-ui-block
+              .col-md-6
+                .design__ux-ui-title
+                  h3
+                    span ux
+                    span ui
+                  span.text3
+              .col-md-6
+                h2 03. UX/UI Design
+                p
+                  | Задумывались ли Вы о том, как часто вы принимаете решения о покупке на основании удобства интерфейса и приятного дизайна? Мы проектируем комфортный пользовательский интерфейс, который в тандеме с дружелюбным дизайном позволяет клиенту получить свежие и оригинальные впечатления от пользования вашим продуктом, будь это сайт или программное обеспечение. Наши дизайнерские решения направлены на то, чтобы улучшить «продажу» продукта или услуги.
+        #load3.design__branding-load
+          div
+            span.small3
+            span.big3
+          div
+            span.small3
+            span.big3
+          div
+            span.small3
+            span.big3
+          div
+            span.small3
+            span.big3
+      include ../modules/footer
+block script
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js")
+  script(src='static/js/jquery-parallax.js')
+  script(src='static/js/jquery.fullPage.min.js')
+  script(src='static/js/design.js')
+  script(src='static/js/slick.min.js')
+  script(src='static/js/wow.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js')
+  script(src='static/js/smokie.js')
+  script(type='text/javascript').
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //FULLPAGE
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        navigation: true,
+        scrollBar: true,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage'],
+        loopBottom: true,
+        loopTop: true,
+        responsiveWidth: 992,
+        responsiveHeight: 620,
+        scrollingSpeed: 900,
+        normalScrollElements: '.clients__right__box',
+        onLeave: function() {
+          soundMenu();
+        }
+      });
+    });
+    // --------------SCROLL-CHANGE-COLOR-------------------
+    jQuery(document.URL.indexOf('design.html')).ready(function($) {
+      var index = 'design.html' + '#',
+      icon = document.getElementById('MenuIcon'),
+      order = document.getElementById('MenuOrder'),
+      logo = document.getElementById('HeaderLogo'),
+      h = document.getElementsByClassName('header')[0],
+      b = 'black',
+      hw = 'header-white',
+      hb = 'header-black',
+      totop = document.getElementById('back-to-top'),
+      nav = $("#fp-nav ul li a span");
+      nav.addClass('black-fp-nav');
+      icon.className += ' ' + b;
+      order.className += ' ' + b;
+      h.className += ' ' + hw;
+      $(window).scroll(function() {
+        if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + '4thpage') >= 0 || document.URL.indexOf(index + '5thpage') >= 0) {
+          icon.classList.remove(b);
+          order.classList.remove(b);
+          h.classList.remove(hw);
+          h.classList.remove(hb);
+          h.className += ' ' + hb;
+          totop.classList.remove(b)
+          nav.removeClass('black-fp-nav');
+        }
+        else {
+          icon.className += ' ' + b;
+          order.className += ' ' + b;
+          h.classList.remove(hb);
+          h.classList.remove(hw);
+          h.className += ' ' + hw;
+          totop.classList.remove(b)
+          totop.className += ' ' + b;
+          nav.addClass('black-fp-nav');
+        }
+      });
+    });
+    //PARALLAX
+    $( document ).mousemove( function( e ) {
+      $( '.text1' )   .parallax( -50, e );
+      $( '.text2' )   .parallax( 20 , e );
+      $( '.text3' )   .parallax( 30 , e );
+    });
+    //WOW
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 0,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    //CHANGE MOBILE
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

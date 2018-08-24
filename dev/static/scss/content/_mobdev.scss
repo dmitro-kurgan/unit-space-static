@@ -1,0 +1,347 @@
+// !!!!!!!!!!!!!!!!!!!!==============================MOB-DEV-PAGE==================================!!!!!!!!!!!!!!!!!!!!!!!!!
+.wrapper {
+	&--mob-dev {
+		.header {
+			padding: 26px 0;
+			@media screen and(max-width: 767px) {
+				padding: 15px;
+			}
+			&__logo {
+				opacity: 1;
+				fill: #000;
+			}
+			&-black-layout {
+			    background-color: rgba(0,0,0,0.5);
+			    .header {
+			    	&__logo {
+						fill: #fff;
+					}
+			    }
+			}
+			&-black {
+				.header {
+					&__logo {
+						&--white {
+							opacity: 1;
+							fill: #fff;
+						}
+						&--black {
+							opacity: 0;
+						}
+					}
+				}
+			}
+			&-white {
+				.header {
+					&__logo {
+						&--white {
+							opacity: 0;
+						}
+						&--black {
+							opacity: 1;
+							fill: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+	&--mob-dev-mob {
+		.fp-tableCell {
+			display: block !important;
+			height: auto !important;
+		}
+		.fp-section.fp-table, .fp-slide.fp-table {
+			height: auto !important;
+		}
+		.header {
+			padding: 26px 0;
+			@media screen and(max-width: 767px) {
+				padding: 15px;
+			}
+			&__logo {
+				opacity: 1;
+			}
+			&-black {
+				background-color: #000;
+				.header {
+					&__logo {
+						&--white {
+							opacity: 1;
+							fill: #fff;
+						}
+						&--black {
+							opacity: 0;
+						}
+					}
+				}
+			}
+			&-white {
+				background-color: $main_color;
+				.header {
+					&__logo {
+						&--white {
+							opacity: 0;
+						}
+						&--black {
+							opacity: 1;
+							fill: #000;
+						}
+					}
+				}
+			}
+		}
+		.ios-dev, .android, .cross-platform {	
+			@media screen and(max-width: 767px) {
+				padding: 40px 0;
+			}
+			h2 {
+				font-size: 36px;
+				font-weight: bold;
+				text-transform: uppercase;
+				@media screen and (max-width: 767px) {
+					font-size: 28px;
+				}
+			}
+			p {
+				margin-top: 40px;
+				font: 400 normal 29px $futuricalt;
+				line-height: 1.15;
+				@media screen and (max-width: 767px) {
+					font-size: 21px;
+				}
+			}
+		}
+		.ios-dev, .cross-platform {
+			background-color: $main_color;
+			color: #000;
+		}
+		.ios-dev {
+			h2 {
+				margin-top: 40px;
+			}
+		}
+		.android {
+			background-color: #000;
+			color: $main_color;
+		}
+		.cross-platform {
+			@media screen and(max-width: 991px) {
+				padding: 80px 0;
+			}
+			@media screen and (max-width: 767px) {
+				padding: 40px 0;
+			}
+			@media screen and(max-width: 500px) {
+				h2 {
+					font-size: 24px;
+				}
+			}
+		}
+		.mob-dev-pg {
+			.usr-exp {
+				&-slider {
+					&__box {
+						color: $main_color;
+						@media screen and(max-width: 767px) {
+							min-height: initial;
+							h4 {
+								font-weight: bold;
+							}
+							p {
+								font-family: $futuricalt;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.mob-dev-pg {
+	.cross-platform {
+		.right-section {
+			// height: 85%;
+			// width: 95%;
+			// @media screen and(max-width: 1199px) {
+			// 	height: 75%;
+			// }
+		}
+		&__list {
+			margin-top: 80px;
+			width: 100%;
+			text-align: left;
+			@media screen and (max-width: 1199px) {
+				margin-top: 40px;
+			}
+			li {
+				display: inline-block;
+				width: 150px;
+				position: relative;
+				@media screen and (max-width: 1599px) {
+					width: 130px;
+				}
+				@media screen and (max-width: 1365px) {
+					width: 100px;
+				}
+				@media screen and (max-width: 1199px) {
+					width: 90px;
+				}
+				@media screen and (max-width: 991px) {
+					margin: 30px 0;
+					width: 100%;
+				}
+				&:before {
+					font: 400 normal 25px $second_font-family;
+					color: #c4c1c1;
+					position: absolute;
+					content: 'Configure.it';
+					left: 0px;
+					right: 0px;
+					top: -32px;
+					opacity: 0;
+					transition: all 0.5s ease;
+					@media screen and (max-width: 991px) {
+						opacity: 1;
+						left: 100px;
+						right: initial;
+						top: 20px;
+					}
+				}
+				&:first-child {
+					&:before {
+						left: -25px;
+						@media screen and (max-width: 991px) {
+							left: 100px;
+						}
+					}
+				}
+				&:nth-child(2) {
+					span {
+						width: 72px;
+						background-position: -87px 0;
+					}
+					&:before {
+						content: 'Phonegap';
+						left: -15px;
+						@media screen and (max-width: 991px) {
+							left: 100px;
+						}
+					}
+				}
+				&:nth-child(3) {
+					span {
+						width: 77px;
+						background-position: -179px 0;
+					}
+					&:before {
+						content: 'Xamarin';
+						left: -5px;
+						@media screen and (max-width: 991px) {
+							left: 100px;
+						}
+					}
+				}
+				&:last-child {
+					span {
+						width: 78px;
+						background-position: -277px 0;
+					}
+					&:before {
+						content: 'Titanium';
+						left: -5px;
+						@media screen and (max-width: 991px) {
+							left: 100px;
+						}
+					}
+				}
+				&:hover {
+					&:before {
+						opacity: 1;
+					}
+				}
+				span {
+					display: block;
+					background: url(../images/content/mob-dev/cross-platform-sprite.png)no-repeat;
+					background-size: cover;
+					width: 73px;
+					height: 76px;				
+				}
+			}
+		}
+	}
+	.usr-exp-slider {
+		&__box {
+			min-height: 200px;
+			@media screen and (max-width: 1470px) {
+				min-height: 175px;
+			}
+			h4, p {
+				font-size: 25px;
+				@media screen and (max-width: 1470px) {
+					font-size: 21px;
+				}
+				@media screen and (max-width: 1199px) {
+					font-size: 18px;
+				}
+			}
+			h4 {
+				margin-top: 20px;
+				text-transform: uppercase;
+			}
+			p {
+				margin-top: 25px;
+			}
+		}
+		.slick-prev, .slick-next {
+			border: 2px solid $main_color;
+			top: initial;
+			right: 0px;
+			top: initial;
+			left: 0px;
+			margin: auto;
+			transform: rotate(90deg) translate(0%, 0%);	
+		}
+		.slick-prev {
+			display: none !important;
+			&:before {
+				border: solid $main_color;
+			    border-width: 0 3px 3px 0;
+			    display: inline-block;
+			    margin: 0px 11px;
+			}
+		}
+		.slick-next {
+			&:before {
+				border: solid $main_color;
+			    border-width: 0 3px 3px 0;
+			    display: inline-block;
+			    margin-right: 5px;
+			}
+		}
+	}
+}
+
+// ---------MOBILE----------
+.mob-dev {
+	.panel-group {
+		@media screen and (max-width: 768px) {
+			display: block;
+		}
+	}
+	#MainMenu {
+		.main-menu__main {
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+	#MainMenu {
+		#mob-menu {
+		display: none;
+			@media screen and (max-width: 768px) {
+				display: block;
+			}	
+		}
+	}
+}

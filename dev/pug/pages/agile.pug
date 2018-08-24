@@ -1,0 +1,226 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Как создать сайт, интернет магазин | Unit Space'
+  - var pageClass = 'agile-page'
+  - var pageWrapper = 'agile'
+  - var pageFooter = '#section6'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='Процесс — Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content.agile
+      mixin section(id, sectionName)
+        section(id= '#section ' + id, class='section ' + sectionName)
+          .container
+            block
+      mixin sectionLeft(title, text, num)
+        ul.row
+          li.col-md-6
+            h1.main-title= title
+            p.second-title= text
+          li.col-md-6
+            .agile-num.clearfix
+              span
+                |
+                = num
+                i.dot.dot-h
+                i.dot.dot-v
+      mixin sectionRight(title, text, num)
+        ul.row
+          li.col-md-6
+           .agile-num.clearfix
+              span
+                |
+                = num
+                i.dot.dot-h
+                i.dot.dot-v
+          li.col-md-6
+            h1.main-title= title
+            p.second-title= text
+      section#section0.section.process
+        .container
+          h1.main-title Процесс работы
+          p.second-title These phases are integral to your success.
+          ul.row
+            mixin processList(title, text, link)
+              li.col-md-3
+                .process__box
+                  span.process__box-img
+                  h4.process__box-title= title
+                  p.process__box-txt= text
+                  a.btn(href='#' + link) Подробнее
+            +processList('01. Старт', 'Первым делом мы внимательно выслушиваем ваши пожелания, цели и суть проекта, уточняем детали и делаем первые предложения о выполнении проекта.', 'secondPage')
+            +processList('02. Согласование плана', 'Вы утверждаете предложенный нами план работ, фирменный стиль, контент, определяемся с функционалом, фазами выполнения проекта и двигаемся вперед.', '3rdPage')
+            +processList('03. Ваш отклик', 'Быть постоянно в тесном контакте – это путь к успеху. Мы проводим личные встречи на каждом этапе процесса разработки. Все для того чтобы создать качественный продукт превышающий Ваши ожидания.', '4thpage')
+            +processList('04. Запуск', 'После того, как предыдущие этапы завершены успешно, мы запускаем проект и получаем первые результаты.', '5thpage')
+      +section('1', 'project')
+        +sectionLeft('ЗАПУСК ПРОЕКТА', 'Для начала каждого проекта важно определить все условия и предложения как можно раньше.', '01')
+        .project__blk
+            ul.row
+              mixin projectList(name, text)
+                li.col-md-6
+                  .project__box
+                    p.project__box-name= name
+                    p.project__box-text= text
+              +projectList('Люди', 'На первой встрече мы знакомим вас с персональном, который будет работать над вашим проектом.')
+              +projectList('Дизайн и тема', 'Здесь мы определимся с вами в том, как будет выглядеть проект, какой опыт и какие ощущения будет испытывать юзер от посещения вашего сайта или использования вашего приложения.')
+              +projectList('USER STORIES & FEATURE CREATION', 'Какие оригинальные идеи, отличительные черты и, главное, уникальные особенности необходимы вашему проекту?  С этим помогут пожелания пользователей.')
+              +projectList('WHITEBOARDING & STORY BOARDING', 'Для того чтобы немного оживить предстоящий проект мы выполним несколько страниц сайта или приложения для того,  чтобы вы могли воочию увидеть в каком направлении двигается проект и представить как он будет выглядеть в итоге.')
+      +section('2', 'flex-iter')
+        +sectionRight('FLEXIBILITY THROUGH ITERATION', 'После нашей встречи мы приступаем к гибкой методике разработки.', '02')
+        .flex-iter__blk
+          ul.row
+            mixin flexIter(name, text)
+              li.col-md-4
+                .flex-iter__box
+                  span.flex-iter__box-name= name
+                  p.flex-iter__box-text= text
+            +flexIter('USER EXPERIENCE & DESIGN', 'Наши дизайнеры начинают разрабатывать структурные схемы страниц, чтобы перевести пожелания пользователей в визуальный интерфейс. После этого мы создаем полностью кликабельный прототип.')
+            +flexIter('Front-end разработка', 'Имея в распоряжении полноценный макет, команда приступает к части разработки front-end.')
+            +flexIter('Разработка', 'Наши разработчики приступают к технической стороне проекта, а также его безопасности и защите.')
+      +section('3', 'success')
+        +sectionLeft('INTEGRAL TO SUCCESS', 'Everyone has a role to play to ensure success of the project.As sprints come to a close, your feedback and ideas are critical. With this, we can be most adaptive to changes in business rules or customer input.', '03')
+        .success__blk
+          ul.row
+            li.col-md-6
+              h4.success__blk-title OPEN AND HONEST DIALOGUE
+              p.success__blk-text
+                | По мере того, как проект продвигается все ближе к финишу, наши регулярные коммуникации с клиентом позволяют учитывать малейшие детали и сглаживать неровности на пути к достижению цели.
+              p.success__blk-text
+                | На наших итоговых встречах мы занимаемся тем, что предоставляем полный отчет о проделанной работе, выслушиваем пожелания, которые могли возникнуть в ходе работы, доступно и понятно объясняем технологические и потребительские возможности, которые пользователь получает с интегрированием тех или иных особенностей.
+              p.success__blk-text Честное сотрудничество – безальтернативный способ создания успешного продукта.
+              a.btn#letsget(href='#') Let's get to work
+            li.col-md-6
+              .success__blk-img
+      +section('4', 'shipping')
+        +sectionRight('SHIPPING IS THE START', "While this phase might represent the conclusion of the initial build, it really is just the beginning of this product's growth. Through diligent focus, the application can reach the next-level through aggressive user acquisition.", '04')
+        .shipping__blk
+          ul.row
+            mixin shippingList(name, text)
+              li.col-md-3
+                .shipping__box
+                  span.flex-iter__box-name= name
+                  p.shipping__box-text= text
+            +shippingList('QA-Тестирование', 'Мы постоянно тестируем приложение с помощью автоматизированных и ручных средств. С приближением завершающей стадии разработки проекта мы уделяем много времени и фокусируемся на тестировании.')
+            +shippingList('Безопасность', 'Мы внедряем элементы управления безопасностью от физического или цифрового вмешательства. В зависимости от ваших потребностей мы также можем поддерживать передовые стандарты безопасности (PCI, HIPAA, SSL).')
+            +shippingList('Хостинг', 'Мы имеем в распоряжении множество различных решений для размещения вашего приложения. С учетом индивидуальных характеристик и особенностей вашего проекта мы подберем наиболее оптимальное решение.')
+            +shippingList('Запуск', 'Самый приятный и волнительный момент – Ваш продукт выходит в свет и начинает делать первые шаги к признанию. Мы будем рядом и поддержим вас, настраивая проект для эффективного привлечения новых пользователей..')
+      section#section5.section.coop-types
+        h1.main-title.wow.fadeInLeft Виды сотрудничества
+        ul.row
+          mixin coopTypes(className, img, title, text, link, id)
+            li.col-md-6
+              div(class='coop-types__' + className, style='background-image: url(' + ('./static/images/content/we-do/' + img + '.jpg') + ')')
+                .coop-types__box
+                  h2= title
+                  .coop-types__inner
+                    div
+                      h3= title
+                      p= text
+                      a.btn(href= link, id= id) Связаться с нами
+          +coopTypes('left', 'background-coop-1', 'Outsource', 'Имея в своем распоряжении широкий спектр разноплановых специалистов, наша компания готова брать на себя часть работ по проекту или же отдельные проекты целиком. Рациональный подход к использованию бюджетов компании и человеческого ресурса поможет вам в разумном распределении времени и средств. Если вы будете Бэтменом, мы станем вашим Робином.', '#', 'contactUs')
+          +coopTypes('right', 'background-coop-2', 'Outstaff', 'Имея в своем распоряжении широкий спектр разноплановых специалистов, наша компания готова брать на себя часть работ по проекту или же отдельные проекты целиком. Рациональный подход к использованию бюджетов компании и человеческого ресурса поможет вам в разумном распределении времени и средств. Если вы будете Бэтменом, мы станем вашим Робином.', '#', 'contactUs2')
+      include ../modules/footer
+block script
+  script(src='static/js/jquery.fullPage.min.js')
+  script(src='static/js/wow.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js')
+  script(src='static/js/smokie.js')
+  script(type='text/javascript').
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //FULLPAGE
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        navigation: true,
+        scrollBar: true,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', 'lastPage'],
+        loopBottom: true,
+        loopTop: true,
+        responsiveWidth: 992,
+        responsiveHeight: 620,
+        scrollingSpeed: 900,
+        normalScrollElements: '.clients__right__box',
+        onLeave: function() {
+          soundMenu();
+        }
+      });
+    });
+    // --------------SCROLL-CHANGE-COLOR-------------------
+    jQuery(document.URL.indexOf('agile.html')).ready(function($) {
+      var index = 'agile.html' + '#',
+      icon = document.getElementById('MenuIcon'),
+      order = document.getElementById('MenuOrder'),
+      logo = document.getElementById('HeaderLogo'),
+      h = document.getElementsByClassName('header')[0],
+      b = 'black',
+      hw = 'header-white',
+      hb = 'header-black',
+      totop = document.getElementById('back-to-top'),
+      nav = $("#fp-nav ul li a span");
+      $(window).scroll(function() {
+        if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + '4thpage') >= 0)  {
+          icon.className += ' ' + b;
+          order.className += ' ' + b;
+          h.classList.remove(hb);
+          h.classList.remove(hw);
+          h.className += ' ' + hw;
+          totop.classList.remove(b);
+          totop.className += ' ' + b;
+          nav.addClass('black-fp-nav');
+          if(document.URL.indexOf(index + 'firstPage') >= 0) {
+              h.classList.remove(hw);
+              h.classList.remove(hb);
+          }
+        }
+        else {
+          icon.classList.remove(b);
+          order.classList.remove(b);
+          h.classList.remove(hw);
+          h.classList.remove(hb);
+          h.className += ' ' + hb;
+          totop.classList.remove(b);
+          nav.removeClass('black-fp-nav');
+        }
+      });
+    });
+    //WOW
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 0,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    //CHANGE MOBILE
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    });

@@ -1,0 +1,20 @@
+footer(id='' + pageFooter).section.fp-auto-height
+  section.footer
+    span.footer__star.wow.fadeInUp(data-wow-duration='1s')
+      a(href='#firstPage')
+    #smokie
+    .footer-gradient(style="background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.52) 48%, rgba(0,0,0,0) 100%);background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0.52) 48%,rgba(0,0,0,0) 100%);background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0.52) 48%,rgba(0,0,0,0) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); position: absolute;top: 0;right: 0;left: 0;bottom: 0; ")
+    .container
+      ul.row
+        li.col-sm-6
+          ul.footer__socials.wow.flipInX(data-wow-duration='2s')
+            +contacts
+          a.footer__telmail(href='tel:' + tel)= tel
+          a.footer__telmail(href='mailto:info@unitspace.top') info@unitspace.top
+        li.col-sm-6
+          .footer__location
+            p Харьков, пл. Защитников Украины, 7
+          .footer__copyright
+            p
+              | Unit Space ©
+              span#year

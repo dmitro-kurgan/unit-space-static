@@ -1,0 +1,199 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Разработка сайтов и интернет-магазинов'
+  - var pageClass = 'web-dev-page'
+  - var pageWrapper = 'web-dev'
+  - var styleCSS = 'style2'
+
+block description
+  meta(name='description', content='Web разработка - Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #wrapperPage
+    .content.web-dev-pg
+      .ms-left
+        #left1.ms-section.left-section.black-section
+          h2 01. CUSTOM WEB DEVELOPMENT
+          p
+            | Наша опытная команда разработает для вас по-настоящему
+            | особенный проект. Создание нового бренда, обеспечение его
+            | присутствия в сети, продвижение товара или услуги, поддержка
+            | имиджа компании или создание многофункционального интернет-
+            | магазина – это лишь часть того, чем мы можем быть полезны для
+            | вас. Мы не используем шаблоны или подобный подход в целом.
+            | Каждый наш сайт – уникален и неповторим.
+        #left2.ms-section.left-section.white-section
+          h2 02. E-COMMERCE
+          p
+            | Наша опытная команда разработает для вас по-настоящему
+            | особенный проект. Создание нового бренда, обеспечение его
+            | присутствия в сети, продвижение товара или услуги, поддержка
+            | имиджа компании или создание многофункционального интернет-
+            | магазина – это лишь часть того, чем мы можем быть полезны для
+            | вас. Мы не используем шаблоны или подобный подход в целом.
+            | Каждый наш сайт – уникален и неповторим.
+        #left3.ms-section.left-section.black-section
+          h2 03. MOBILE BACKEND & APIS
+          p
+            | Мы предоставляем вам возможность создавать масштабные бэкэнд-системы, управляемые API-архитектурой, используем возможности различных фреймворков, которые соответствуют бизнес потребностям и конкретным целям, чтобы в итоге создать единый источник данных для обработки нескольких приложений.
+        #left4.ms-section.left-section.white-section
+          h2 04. СИСТЕМА УПРАВЛЕНИЯ СОДЕРЖИМЫМ
+          p
+            | Уникальность проекта напрямую зависит от его содержания. Мы разработаем оригинальный движок сайта, который будет наилучшим образом удовлетворять потребности вашего проекта в предоставлении пользователю максимально удобного и дружелюбного функционала и содержания.
+        #left5.ms-section.left-section.black-section.we-work
+          .we-work__block.we-work__block--left
+            h2 Web Technologies We Work With
+            p
+              | In-house specialists of contemporary technologies that encapsulates server-side and front-end stacks.
+            .we-work__box.clearfix
+              mixin techs()
+                ul
+                  - var tech = ['python', 'ruby', 'php', 'node', 'go', 'mvc', 'django', 'rails', 'laravel', 'symfony', 'angular', 'react', 'wordpress', 'drupal', 'joomla', 'opencart', 'sass', 'webpack']
+                  each name in tech
+                    li
+                      img(src="./static/images/content/web-dev/images/" + name + '.png', alt= name)
+              +techs()
+        #left6.ms-section.left-section.footer-left
+          .footer-left__main
+            h3 Свяжитесь с нами
+            p
+              | Для того, чтобы связаться с нами,
+              br
+              | пожалуйста, заполните следующую форму.
+            form#order-form(data-title='Заявка на сайте', data-order-form='')
+              .form-group.clearfix
+                div
+                  input#name.form-control(type='text', name='name', data-title='Имя', placeholder='Имя', data-is-included='true', required='')
+                  span.dash-bottom
+              .form-group.clearfix
+                div
+                  input#tel.form-control(type='tel', name='tel', data-title='Телефон', placeholder='Телефон', data-is-included='true', required='')
+                  span.dash-bottom
+              .form-group.clearfix
+                div
+                  input#email.form-control(type='text', name='e-mail', data-title='E-mail', placeholder='E-mail', data-is-included='true', required='')
+                  span.dash-bottom
+              .form-group.clearfix
+                div
+                  input#comment.form-control(type='text', name='comment', data-title='Комментарий', placeholder='Комментарий', data-is-included='true')
+                  span.dash-bottom
+              button.btn(type='submit') Отправить
+            //- ul.socials.clearfix
+            //-   li
+            //-     a(target='_blank', href='https://www.facebook.com/unitspace.top/') Facebook
+            //-   li
+            //-     a(target='_blank', href='https://t.me/vladislavromanov') Twitter
+            //-   li
+            //-     a(target='_blank', href='https://www.facebook.com/unitspace.top/') Linkedin
+            //-   li
+            //-     a(target='_blank', href='https://t.me/vladislavromanov') Instagram
+      .ms-right
+        #right1.ms-section
+          .right-section(style='background-image: url(./static/images/content/web-dev/images/web-dev-banner.jpg)')
+        #right2.ms-section
+          .right-section(style='background-image: url(./static/images/content/web-dev/images/web-dev-e-commerce.jpg)')
+        #right3.ms-section
+          .right-section(style='background-image: url(./static/images/content/web-dev/images/web-dev-mobile.jpg)')
+        #right4.ms-section
+          .right-section(style='background-image: url(./static/images/content/web-dev/images/web-dev-system.jpg)')
+        #right5.ms-section.black-section.we-work
+          .we-work__block.we-work__block--right
+            h2 Web Technologies We Work With
+            p
+              | In-house specialists of contemporary technologies that encapsulates server-side and front-end stacks.
+            .we-work__box.clearfix
+              +techs()
+        #right6.ms-section.footer-right
+          .footer-right__main
+            h3 Наши контакты
+            ul
+              li
+                p Харьков, пл. Защитников Украины, 7
+              li
+                p
+                  | Телефон:
+                  a(href='tel:' + tel) +380639993211
+              li
+                p
+                  | Email:
+                  a(href='mailto:' + mail) info@unitspace.top
+            .footer-right__c
+              p
+                | Unit Space ©
+                span#year
+            .footer-right__socials
+              ul
+                +contacts
+block script
+  script(src='static/js/jquery.easings.min.js')
+  script(src='static/js/jquery.multiscroll.min.js')
+  script(src='static/js/wow.min.js')
+  script(type='text/javascript').
+    function changeTablet() {
+      if(matchMedia) {
+        var screen = window.matchMedia('(max-width: 992px)');
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if(screen.matches) {
+          location.href="web-dev-mob.html";
+        }
+      }
+    };
+    changeTablet();
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //MULTISCROLL
+    $(document).ready(function() {
+      var index = 'web-dev.html' + '#',
+      icon = document.getElementById('MenuIcon'),
+      order = document.getElementById('MenuOrder'),
+      logo = document.getElementById('HeaderLogo'),
+      h = document.getElementsByClassName('header')[0],
+      b = 'black',
+      hw = 'header-white',
+      hb = 'header-black';
+      $('#wrapperPage').multiscroll({
+        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'lastPage'],
+        loopBottom: true,
+        loopTop: true,
+        sectionSelector: '.section',
+        leftSelector: '.left',
+        rightSelector: '.right',
+        onLeave: function(){
+          soundMenu();
+          if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + 'fourthPage') >= 0) {
+            icon.classList.remove(b);
+            order.classList.remove(b);
+            icon.className += ' ' + b;
+            order.className += ' ' + b;
+            h.className += ' ' + hw;
+          }
+          else {
+            icon.classList.remove(b);
+            order.classList.remove(b);
+            h.classList.remove(hw);
+          }
+        }
+      })
+    });

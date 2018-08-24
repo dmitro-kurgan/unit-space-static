@@ -1,0 +1,22 @@
+{
+  "navPages": {
+    "Web-разработка" : "web-dev.html",
+    "Мобильные приложения" : "mob-dev.html",
+    "Дизайн" : "design.html"
+  },
+  "navPages2": {
+    "Главная" : "./",
+    "О нас" : "aboutus.html",
+    "Что мы делаем" : "we-do.html",
+    "Процесс" : "agile.html",
+    "Unit Shop" : "https://unit-shop.top"
+  },
+  "navPages3": {
+    "Наши контакты" : "contacts.html"
+  },
+  "socialLinks": {
+  	"Facebook": "https://www.facebook.com/unitspace.top/",
+  	"Telegram": "https://t.me/vlad_9779",
+  	"Linkedin": "https://www.linkedin.com/company/unit-space"
+  }
+}

@@ -1,0 +1,201 @@
+footer {
+	position: relative;
+	.footer {
+		font: 400 normal 20px $second_font-family;
+		color: $main_color;
+		letter-spacing: 0.8px;
+		min-height: 450px;
+		display: block;
+		padding-top: 340px;
+		@media screen and (max-width: 767px) {
+			text-align: center;
+			padding: 140px 0;
+		}
+		&__star {
+			background: url(../images/footer-star.png)no-repeat;
+			width: 622px;
+			height: 319px;
+			background-size: cover;
+			position: absolute;
+			z-index: 1;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+			// bottom: 0px;
+			bottom: 0px;
+			@media screen and (max-width: 1365px) {
+				width: 498px;
+				height: 255px;
+			}
+			@media screen and (max-width: 1199px) {
+				width: 373px;
+				height: 191px;
+			}
+			@media screen and (max-width: 991px) {
+				width: 249px;
+				height: 128px;
+			}
+			a {
+				transform: translate(11%, 19%);
+			    display: inline-block;
+			    width: 82%;
+			    height: 100%;
+			}
+		}
+		// &__smoke {
+		// 	background: url(../images/footer-smoke.png)no-repeat;
+		// 	width: 100%;
+		// 	position: absolute;
+		// 	left: 0px;
+		// 	right: 0px;
+		// 	bottom: 0px;
+		// 	top: 0px;
+		// 	margin: auto;
+		// 	opacity: 0.5;
+		// 	z-index: 0;
+		// 	background-size: cover;
+		// 	animation: movesmoke 3s ease-in-out infinite;
+		// }
+		// @keyframes movesmoke {
+		// 	0%, 100% {
+		// 		opacity: 0.25;
+		// 	}
+		// 	50% {
+		// 		opacity: 1;
+		// 	}
+		// }
+		&__socials {
+			-webkit-transform: translate3d(0, 0, 0);
+			// transform: translate3d(0, 0, 0) translate(0%, -50%);
+			transform: translate3d(0, 0, 0);
+			overflow: hidden;
+			@media screen and (max-width: 767px) {
+				max-width: 272px;
+				margin: auto auto 10px auto;
+			}
+			li {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+				float: left;
+				margin-right: 70px;
+				position: relative;
+				padding: 5px 0;
+				@media screen and (max-width: 991px) {
+			    	margin-right: 52px;
+			    }
+				&:after {
+				    content: '/';
+				    position: absolute;
+				    font: 400 normal 25px $second_font-family;
+				    color: #7d7d7d;
+				    right: -40px;
+				    top: 0px;
+				    @media screen and (max-width: 991px) {
+				    	right: -36px;
+				    }
+				}
+				&:nth-child(2) {
+					a {
+						width: 34px;
+						background-position: -103px 0px;
+					}
+				}
+				&:nth-child(3) {
+					a {
+						width: 20px;
+						background-position: -76px 0px;
+					}
+				}
+				&:nth-child(4) {
+					margin-right: 0px;
+					&:after {
+						display: none;
+					}
+					a {
+						width: 34px;
+						background-position: -35px 0%;
+					}
+				}
+				a {
+					// background: url(../images/footer-links-sprite.png) no-repeat;
+					// background-position: 0px 0px;
+					width: 28px;
+					height: 29px;
+					display: block;
+					margin: auto;
+					// transform: (1.25);
+					
+					transition: all 0.3s ease;
+					&:hover {
+						-webkit-filter: drop-shadow(0px 0px 4px #fff);
+						-moz-filter: drop-shadow(0px 0px 4px #fff);
+						-ms-filter: drop-shadow(0px 0px 4px #fff);
+						-o-filter: drop-shadow(0px 0px 4px #fff);
+						filter: drop-shadow(0px 0px 4px #fff);
+					}
+					svg {
+						width: 28px;
+						height: 29px;
+						fill: $main_color;
+					}
+				}
+			}
+		}
+		&__telmail {
+			color: $main_color;
+			margin-right: 20px;
+			margin-top: 10px;
+			display: inline-block;
+			@media screen and (max-width: 1199px) {
+				font-size: 17px;
+			}
+			@media screen and (max-width: 991px) {
+				font-size: 14px;
+			}
+			@media screen and (max-width: 767px) {
+				font-size: 20px;
+			}
+			
+
+		}
+		&__location {
+			text-align: right;
+			
+			@media screen and (max-width: 1199px) {
+				font-size: 18px;
+			}
+			@media screen and (max-width: 991px) {
+				font-size: 15px;
+			}
+			@media screen and (max-width: 767px) {
+				font-size: 20px;
+				text-align: center;
+				margin-top: 30px;
+			}
+
+			// display: inline-block;
+		}
+		&__copyright {
+			text-align: right;
+			margin-top: 10px;
+			@media screen and (max-width: 1199px) {
+				font-size: 18px;
+			}
+			@media screen and (max-width: 991px) {
+				font-size: 15px;
+			}
+			@media screen and (max-width: 767px) {
+				font-size: 20px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+#smokie {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}

@@ -1,0 +1,217 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Разработка и создание сайтов | Unit Space'
+  - var pageClass = 'index-page'
+  - var pageWrapper = 'index'
+  - var pageFooter = '#section5'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='Создание и разработка сайтов любой сложности. Качественно и доступно. КОНТАКТЫ  ☎️ (063) 999-32-11 .  WEB - студия UNIT SPACE . ➡️ Готовы создать сайт в кратчайшие сроки . Выполнено более ➊00 проектов. Поддерживаем клиентов  24/7 ✓ Выполняем все с гарантией ✓')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content
+      section#section0.section.banner.active
+        //- .beta Beta
+        .background
+          img.cloud1(src='./static/images/content/main-page/stars-main.png', width='1920', height='1080', alt='Clouds')
+          canvas#main_canvas(style='position: absolute;left: 0px;right: 0px;bottom: 0px;top: 0px;width: 100%;height: 100%;margin: auto;')
+        .container
+          span.banner__logo.wow.fadeIn(data-wow-duration='3s')
+            span.banner__planet1
+              span.banner__planet1-inner
+            span.banner__planet2
+              span.banner__planet2-inner
+        .banner__arrow
+          a(href='#secondPage')
+            span
+      section#section1.section.services
+        .container
+          h1.main-title.wow.fadeInLeft Услуги
+          ul.row.services__box
+            mixin services(link, name, description)
+              li.col-md-6
+                a(href= link)
+                  .services__box-img.wow.fadeInDown(data-wow-duration='2s')
+                    span
+                  p.services__box-txt.wow.fadeInUp(data-wow-duration='2s')= name
+                  p.services__box-hidden.wow= description
+            +services('web-dev.html', 'Web-разработка', 'Полный цикл создания web-сайтов и web-приложений')
+            +services('mob-dev.html', 'Мобильные приложения', 'Разработка мобильных приложений для бизнеса или стартапов')
+            +services('design.html', 'Брендинг и дизайн', 'Создание и продвижение нового или существующего бренда')
+            +services('agile.html#6thpage', 'Outstaff/Outsource', 'Привлечение новых клиентов с помощью поисковой оптимизации и контекстной рекламы')
+        .container.container-bottom-title
+          p.bottom-title.wow.fadeInLeft(data-wow-duration='1s') Software Development
+      section#section3.section.team
+        .container
+          h1.main-title.wow.slideInLeft(data-wow-duration='1s') Команда
+          .team__box
+            span.team__box-shadow.wow.fadeIn(data-wow-duration='1s', data-wow-delay='0.25s')
+            section.team-slider.center.slider
+              mixin sliderTeam(delay, img, alt, name, post)
+                div
+                  .team-slider__box.wow.fadeIn(data-wow-duration='2s', data-wow-delay= delay)
+                    .team-slider__box-img
+                      img(src='./static/images/content/main-page/team/' + img, alt= alt)
+                    h3.team-slider__box_-name= name
+                    p.team-slider__box-post= post
+              +sliderTeam('1s', 'CEO.png', 'Vladislav Rudas', 'Владислав Рудась', 'CEO - Unit Space')
+              +sliderTeam('1.5s', 'COO.png', 'Vladislav Romanov', 'Владислав Романов', 'COO - Unit Space')
+              +sliderTeam('1.5s', 'CISO.png', 'Dmitro Kurgan', 'Дмитрий Курган', 'Product Manager - Unit Space')
+              +sliderTeam('1.5s', 'ART.png', 'Olga Regetsyi', 'Ольга Регеций', 'Head of UX & Design - Unit Space')
+              +sliderTeam('1.5s', 'CTO.png', 'Vladislav Kryzhnyi', 'Владислав Крыжний', 'CTO - Unit Space')
+        .container.container-bottom-title
+          p.bottom-title.wow.slideInLeft(data-wow-duration='1s') Software Development
+      //- section#section4.section.reps
+      //-   .container.container-map
+      //-     h1.main-title.wow.flipInX(data-wow-duration='1s', data-wow-delay='0.25s') Наши представители
+      //-     .map.is-hidden--sm-down
+      //-       .map__inner.js-map
+      //-         img.wow.fadeIn(src='./static/images/map.png', alt='', data-wow-duration='2s')
+      //-         .js-map-marker.map__marker.is-active(style='left: 57.5%;top: 28.9%;')
+      //-         .js-map-marker.map__marker.wow.fadeIn(data-wow-duration='2s', data-wow-delay='0.5s', style='left: 25.9%;top: 36%;')
+      //-         .js-map-marker.map__marker.wow.fadeIn(data-wow-duration='2s', data-wow-delay='0.55s', style='left: 51.9%;top: 32%;')
+      //-         .js-map-marker.map__marker.wow.fadeIn(data-wow-duration='2s', data-wow-delay='0.6s', style='left: 22.2%;top: 39%;')
+      //-         .js-map-marker.map__marker.wow.fadeIn(data-wow-duration='2s', data-wow-delay='0.65s', style='left: 27.3%;top: 39%;')
+      //-         .js-map-marker.map__marker.wow.fadeIn(data-wow-duration='2s', data-wow-delay='0.7s', style='left: 49.9%;top: 32.5%;')
+      //-         .js-map-marker.map__marker.wow.fadeIn(data-wow-duration='2s', data-wow-delay='0.75s', style='left: 60.4%;top: 39.1%;')
+      //-         .js-map-marker.map__marker.wow.fadeIn(data-wow-duration='2s', data-wow-delay='0.8s', style='left: 57.5%;top: 67.5%;')
+      //-     .reps__address(itemscope='', itemtype='http://schema.org/Organization')
+      //-       .is-hidden
+      //-         span(itemprop='name') Unitspace
+      //-       ul.js-accordion
+      //-         mixin map-list(active, city, img, alt, name, mailhref, mailname, location, location2, location3, address, postal, country )
+      //-           li(class='js-map-text ' + active, itemprop='location', itemscope='', itemtype='http://schema.org/Place')
+      //-             h3.js-accordion-header(itemprop='name')= city
+      //-             .reps__address__img
+      //-               img(src='./static/images/content/main-page/map/' + img, alt= alt)
+      //-             p.reps__address__name= name
+      //-             .js-accordion-content
+      //-               .reps__address__content
+      //-                 a.reps__address__content__email(href='mailto:' + mailhref, itemprop='email', style='display: none;')= mailname
+      //-                 p.reps__address__content__loc(itemprop='address', itemscope='', itemtype='http://schema.org/PostalAddress')
+      //-                   span= location
+      //-                   br
+      //-                   span(itemprop='streetAddress')
+      //-                     span= location2
+      //-                     br
+      //-                     span= location3
+      //-                   br
+      //-                   span(itemprop='addressLocality')= address
+      //-                   | , 
+      //-                   span(itemprop='postalCode')= postal
+      //-                   span.is-hidden(itemprop='addressCountry')= country
+      //-         +map-list('is-active', 'Москва', 'map-img-1.png', '', 'Алексей Васильев', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'London', 'SW1E 5RS', 'United Kingdom')
+      //-         +map-list('', 'Торонто', 'map-img-1.png', '', 'Джон Майлз', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'Chicago', 'SW1E 5RS', 'Canada')
+      //-         +map-list('', 'Берлин', 'map-img-1.png', '', 'Клаус Майнэ', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'Chicago', 'SW1E 5RS', 'Germany')
+      //-         +map-list('', 'Чикаго', 'map-img-1.png', '', 'Аристарх Игнатъев', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'London', 'SW1E 5RS', 'USA')
+      //-         +map-list('', 'Нью-Йорк', 'map-img-1.png', '', 'Сильвестр Бузин', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'New York', 'SW1E 5RS', 'USA')
+      //-         +map-list('', 'Дюссельдорф', 'map-img-1.png', '', 'Тиль Швайгер', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'Düsseldorf', 'SW1E 5RS', 'Germany')
+      //-         +map-list('', 'Тбилиси', 'map-img-1.png', '', 'Вахтанг Кикабидзе', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'Tbilisi', 'SW1E 5RS', 'Georgia')
+      //-         +map-list('', 'Додома', 'map-img-1.png', '', 'Юрий Антонов', 'google@gmail.com', 'mailto:google@gmail.com', '16th Floor', 'Portland House', 'Bressenden Place', 'Dodoma', 'SW1E 5RS', 'Tanzania')
+      include ../modules/footer
+block script
+  
+  script(src='static/js/jquery.fullPage.min.js')
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js")
+  script(src='static/js/jquery-parallax.js')
+  script(src='static/js/slick.min.js')
+  //- script(type='text/javascript', src='static/js/shared.min.js')
+  script(src='static/js/stars.js')
+  script(src='static/js/wow.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js')
+  script(src='static/js/smokie.js')
+  script(type='text/javascript').
+    //CHANGE-OPACITY-LOGO
+    jQuery(document).ready(function($) {
+      h = $('.header')
+      top = $(window);
+      $(window).scroll(function(){
+        if($(top).scrollTop() > 40) {
+          h.addClass('header-black');
+        }
+        else {
+          h.removeClass('header-black');
+        }
+      });
+    });
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //PARALLAX
+    $( document ).mousemove( function( e ) {
+      $( '.background' ).parallax( -30, e );
+      $( '.cloud1' )    .parallax( -50, e );
+      $( '.cloud2' )    .parallax( 20 , e );
+      $( '.cloud3' )    .parallax( 30 , e );
+    });
+    //FULLPAGE
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        navigation: true,
+        scrollBar: true,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
+        loopBottom: true,
+        loopTop: true,
+        responsiveWidth: 992,
+        responsiveHeight: 620,
+        scrollingSpeed: 900,
+        normalScrollElements: '.clients__right',
+        onLeave: function() {
+          soundMenu();
+        }
+      });
+    });
+    //Slick-Slider
+    $('.center').slick({
+      centerMode: true,
+      centerPadding: '0px',
+      slidesToShow: 3,
+      focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+          centerMode: false,
+          slidesToShow: 1
+          }
+        }
+      ]
+    });
+    //WOW
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 0,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    //CHANGE MOBILE
+    $(window).bind('resize', function () {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        location.href="mobile.html";
+      }
+    }).trigger('resize');

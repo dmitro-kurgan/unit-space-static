@@ -1,0 +1,35 @@
+extends ../layout/main
+
+block variables
+  - var title = '404 Страница не найдена'
+  - var pageClass = 'error-page'
+  - var pageWrapper = 'error'
+  - var pageFooter = ''
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='404 Страница не найдена')
+
+block content
+  .error-pg
+    .error-pg__block.container
+      .error-pg__inner
+        h1 404
+        .error-pg__text
+          p
+            | Sorry, 
+            br
+            | for not beeing
+            br
+            | here for you.
+        a(href="./").error-pg__back
+          | Go back to Homepage
+      #year
+block script
+  script(type='text/javascript').
+    //CHANGE MOBILE
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

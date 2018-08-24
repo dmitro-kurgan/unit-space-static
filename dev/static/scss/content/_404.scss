@@ -1,0 +1,129 @@
+.error-pg {
+	background-color: #000;
+	height: 100vh;
+	h1 {
+		font: 400 normal 717px $archive;
+		color: #1d1d1d;
+		text-align: right;
+		line-height: 0.8;
+		@media screen and (max-width: 1365px) {
+			font-size: 563px;
+		}
+		@media screen and (max-width: 1199px) {
+			font-size: 420px;
+		}
+		@media screen and (max-width: 991px) {
+			font-size: 340px;
+		}
+		@media screen and (max-width: 700px) {
+			font-size: 300px;
+		}
+		@media screen and (max-width: 640px) {
+			font-size: 250px;
+		}
+		@media screen and (max-width: 520px) {
+			font-size: 200px;
+		}
+		@media screen and (max-width: 460px) {
+			font-size: 200px;
+		}
+		@media screen and (max-width: 420px) {
+			font-size: 160px;
+		}
+	}
+	&__block {
+		height: inherit;
+		position: relative;
+		display: flex;
+		align-items: center;
+		max-width: 1480px;
+	}
+	&__inner {
+		width: 100%;
+	}
+	&__text {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		display: flex;
+		align-items: center;
+		margin: auto;
+		color: $main_color;
+		font: 400 normal 64px $futuricabook;
+		@media screen and (max-width: 1199px) {
+			font-size: 45px;
+		}
+		@media screen and (max-width: 991px) {
+			font-size: 34px;
+		}
+		p {
+			margin-top: -200px;
+			@media screen and (max-width: 1199px) {
+				margin-top: -175px;
+			}
+			@media screen and (max-width: 991px) {
+				margin-top: -150px;
+			}
+			@media screen and (max-width: 480px) {
+				margin-top: -280px;
+			}
+		}
+	}
+	&__back {
+		color: $main_color;
+		font: 400 normal 40px $futuricabook;
+		padding-left: 65px;
+		margin-left: 30px;
+		position: relative;
+		@media screen and (max-width: 991px) {
+			font-size: 32px;
+			padding-left: 50px;
+		}
+		@media screen and (max-width: 767px) {
+		    top: 25px;
+		    margin-left: 0px;
+		}
+		@media screen and (max-width: 480px) {
+		    font-size: 23px;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			top: 15px;
+			left: 0px;
+			width: 0px;
+			height: 0px;
+			padding: 9px;
+			border-color: $main_color;
+			border-width: 0px 3px 3px 0px;
+			border-style: solid;
+			transform: rotate(135deg);
+			@media screen and (max-width: 991px) {
+				top: 13px;
+				padding: 7px;
+			}
+			@media screen and (max-width: 480px) {
+			    top: 6px;
+			}
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 24px;
+			left: 0px;
+			width: 40px;
+			height: 3px;
+			background-color: $main_color;
+			@media screen and (max-width: 991px) {
+				width: 30px;
+				top: 20px;
+			}
+			@media screen and (max-width: 480px) {
+			    top: 13px;
+			}
+		}
+	}
+	#year {
+		display: none;
+	}
+}

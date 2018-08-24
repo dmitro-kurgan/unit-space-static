@@ -1,0 +1,147 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Разработка мобильных приложений для Android, iOS | Unit Space'
+  - var pageClass = 'mob-dev'
+  - var pageWrapper = 'mob-dev-mob'
+  - var pageFooter = '#section4'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='Mobile development — Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content.mob-dev-pg
+      mixin section(id, className, blockName, title, text)
+        section(id='#section' + id, class='section ' + className).section
+          .container
+            div(class= blockName)
+              h2(class='wow fadeIn')= title
+              p(class='wow fadeIn', data-wow-delay='0.5s')= text
+              block
+      +section('0', 'ios-dev active', 'ios-dev__block', '01. ПРИЛОЖЕНИЯ ДЛЯ IOS', 'Будучи одним из самых популярных и больших брендов в мире, Apple задал четкие критерии своей аудитории. Приложения для клиентов высокого ценового сегмента могут быть как соло-проектами, так и неотъемлемой частью успешной маркетинговой стратегии. Мы поможем вам разработать приложения для всей платформы iOS, включая iPhone, iPad, Apple Watch и Apple TV.')
+      +section('1', 'android', 'ios-dev__android', '02. ПРИЛОЖЕНИЯ ДЛЯ ANDROID', 'Лидерство рынка мобильных приложений Android получил за счет ряда собственных прерогатив. Инновационность технологий, доступность широкому числу пользователей, открытость для своих клиентов – лишь несколько причин для того, чтобы обратить свой взгляд на создание собственного приложения на этой платформе.')
+      +section('2', 'cross-platform', 'cross-platform__block', 'Кроссплатформенные приложения', 'Для того, чтобы максимально расширить охват аудитории мы предлагаем возможность создания кроссплатформенного приложения для различных операционных систем и платформ. Не нужно ограничивать свой продукт лишь потому, что кто-то использует определенный бренд.')
+        ul.cross-platform__list
+          mixin li
+            li.wow.fadeIn
+              span
+          - for(var i = 0; i < 4; i++) {
+            +li
+          - }
+      section#section3.section.usr-exp
+        .container
+          .usr-exp-slider.slider
+            mixin uxSlider(title, text)
+              div
+                .usr-exp-slider__box
+                  h4= title
+                  p= text
+            +uxSlider('User Experience First', 'We take the experience of the users very seriously. We want them to experience surprise delight.')
+            +uxSlider('Fully Branded', 'We respect the time and effort you’ve put in to build your brand and we want the software build with us to support and enhance your it. We fully integrate our applications with the look and feel of your brand.')
+            +uxSlider('Flexibility Built In', 'We know things will change over time. As you use a system, you’ll want changes and Because of this, we build all our applications so that they are ready to be adjusted. We have flexible user and permission system, simple ways to adjust the database schema and so much more.')
+            +uxSlider('Security Best Practices', 'We don’t store passwords or credit cards. We don’t install mysterious software on the We have extensive enterprise experience and we know that security is key component of successful project.')
+      include ../modules/footer
+block script
+  script(src='static/js/jquery.fullPage.min.js')
+  script(src='static/js/slick.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js')
+  script(src='http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js')
+  script(src='static/js/smokie.js')
+  script(src='static/js/wow.min.js')
+  script(type='text/javascript').
+    //RESIZE
+    $(window).bind('resize', function () {
+      if ($(window).width() > 992) {
+         location.href="mob-dev.html";
+      }
+    }).trigger('resize');
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+      console.log('3');
+      el.style.opacity = 1;
+      var interhellopreloader = setInterval(function() {
+        el.style.opacity = el.style.opacity - 0.05;
+        if (el.style.opacity <=0.05) {
+      	 clearInterval(interhellopreloader);
+      	 $(hellopreloader).parent().parent().hide();
+      	}
+      },16);
+    }
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //FULLPAGE
+    $('#fullpage').fullpage({
+        navigation: true,
+        scrollBar: true,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', 'lastPage'],
+        loopBottom: true,
+        loopTop: true,
+        responsiveWidth: 992,
+        responsiveHeight: 620,
+        scrollingSpeed: 900,
+        normalScrollElements: '.clients__right__box'
+    });
+    jQuery(document.URL.indexOf('mob-dev-mob.html')).ready(function($) {
+      var index = 'mob-dev-mob.html' + '#';
+      icon = document.getElementById('MenuIcon'),
+      order = document.getElementById('MenuOrder'),
+      logo = document.getElementById('HeaderLogo'),
+      h = document.getElementsByClassName('header')[0],
+      logo = document.getElementById('HeaderLogo'),
+      back = document.getElementById('back-to-top'),
+      b = 'black',
+      hw = 'header-white',
+      hb = 'header-black',
+      icon.className += ' ' + b;
+      order.className += ' ' + b;
+      h.className += ' ' + hw;
+      $(window).scroll(function(){
+          if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + '4thpage') >= 0 || document.URL.indexOf(index + '5thpage') >= 0)  {
+              icon.classList.remove(b);
+              order.classList.remove(b);
+              h.classList.remove(hb);
+              h.classList.remove(hw);
+              back.classList.remove(b);
+              h.className += ' ' + hb;
+          }
+          else {
+              icon.className += ' ' + b;
+              order.className += ' ' + b;
+              h.classList.remove(hb);
+              h.classList.remove(hw);
+              back.classList.remove(b);
+              back.className += ' ' + b;
+              h.className += ' ' + hw;
+          }
+      });
+    });
+    //SLIDER
+    $(document).ready(function() {
+      $('.usr-exp-slider').slick({
+        vertical: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        verticalSwiping: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: "unslick"
+          }
+        ]
+      });
+    });
+    //ADD CLASS TO HEADER MENU
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

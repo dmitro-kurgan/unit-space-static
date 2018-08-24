@@ -1,0 +1,40 @@
+mixin icon(name,mod,id)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod, id='' + id)
+		use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+
+
+
+mixin contacts
+	li
+		a(href='tel:' + tel)
+			+icon('phone', '', '')
+	li
+		a(href='mailto:' + mail)
+			+icon('mail', '', '')
+	li
+		a(href='' + fb, target='_blank')
+			+icon('facebook', '', '')
+	li
+		a(href='' + telegram, target='_blank')
+			+icon('telegram', '', '')
+
+mixin form
+	form#order-form(data-title='Заявка на сайте', data-order-form='')
+		.form-group.clearfix
+			div
+				input#name.form-control(type='text', name='name', data-title='Имя', placeholder='Имя', data-is-included='true', required='')
+				span.dash-bottom
+		.form-group.clearfix
+			div
+				input#tel.form-control(type='tel', name='tel', data-title='Телефон', placeholder='Телефон', data-is-included='true', required='')
+				span.dash-bottom
+		.form-group.clearfix
+			div
+				input#email.form-control(type='text', name='e-mail', data-title='E-mail', placeholder='E-mail', data-is-included='true', required='')
+				span.dash-bottom
+		.form-group.clearfix
+			div
+				input#comment.form-control(type='text', name='comment', data-title='Комментарий', placeholder='Комментарий', data-is-included='true')
+				span.dash-bottom
+		button.btn(type='submit') Отправить

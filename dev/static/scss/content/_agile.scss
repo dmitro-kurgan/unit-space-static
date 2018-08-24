@@ -1,0 +1,925 @@
+.wrapper {
+	&--agile {
+		.header {
+			padding: 26px 0;
+			@media screen and(max-width: 767px) {
+				padding: 15px;
+			}
+			&__logo {
+				opacity: 1;
+			}
+			&-black {
+				background-color: #000;
+				.header {
+					&__logo {
+						&--white {
+							opacity: 1;
+							fill: #fff;
+						}
+						&--black {
+							opacity: 0;
+						}
+					}
+				}
+			}
+			&-white {
+				background-color: $main_color;
+				.header {
+					&__logo {
+						&--white {
+							opacity: 0;
+						}
+						&--black {
+							opacity: 1;
+							fill: #000;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.agile {
+	.main-title {
+		font-size: 50px;
+		@media screen and (max-height: 850px) {
+			font-size: (50px/1.15);
+		}
+		@media screen and (max-height: 750px) {
+			font-size: (50px/1.25);
+		}
+		@media screen and (max-height: 700px) {
+			font-size: (50px/1.5);
+		}
+		@media screen and (max-width: 991px) {
+			display: block;
+			// margin-top: 80px;
+			text-align: center;
+		}
+		@media screen and (max-width: 767px) {
+			font-size: 26px;
+		}
+	}
+	.agile-num {
+		position: relative;
+		@media screen and (max-width: 991px) {
+			display: none;
+		}
+		span {
+			display: block;
+			font: 400 normal 337px $second_font-family;
+			line-height: 290px;
+	    	height: 262px;
+	    	text-align: right;
+	    	float: right;
+	    	background-image: url(../images/content/main-page/banner-main.jpg);
+		    background-position: center;
+		    -webkit-background-clip: text;
+		    background-clip: text;
+		    color: transparent;
+		    position: relative;
+		    animation: changebg 30s linear infinite;
+		    @media screen and (max-height: 880px) {
+				font-size: 235px;
+				line-height: 204px;
+				height: 190px;
+			}
+			@media screen and (max-height: 650px) {
+				font-size: 160px;
+				line-height: 150px;
+				height: 140px;
+			}
+			@media screen and (max-width: 1365px) {
+				font-size: 160px;
+				line-height: 168px;
+				height: 140px;
+			}
+		    .dot {
+		    	background-image: url(../images/content/agile/dot-v.png);
+		    	content: '';
+		    	position: absolute;
+		    	width: 12px;
+		    	height: 100vh;
+		    	// left: 50%;
+		    	right: 85px;
+		    	top: 100%;
+		    	@media screen and (max-width: 1599px) {
+		    		display: none;
+		    	}
+		    }
+		    .dot-h {
+		    	background-image: url(../images/content/agile/dot-h.png);
+				height: 12px;
+				top: 50%;
+				left: -120%;
+				// right: 100%;
+				width: 120%;
+				@media screen and (max-height: 850px) {
+					left: -175%;
+					width: 175%;
+				}
+				@media screen and (max-width: 1829px) {
+					width: 150%;
+					left: -150%;
+				}
+		    }
+		}
+	}
+	.process {
+		color: $main_color;
+		@media screen and (max-height: 619px) {
+			display: block;
+			height: initial !important;
+			padding: 80px 0 80px 0;
+		}
+		@media screen and (max-width: 991px) {
+			padding: 80px 0 80px 0;
+		}
+		.fp-tableCell {
+			@media screen and (max-height: 619px) {
+				display: block;
+				height: initial !important;
+			}
+		}
+		.second-title {
+			font: 400 normal 27px $second_font-family;
+			margin-top: 5px;
+			@media screen and (max-height: 750px) {
+				font-size: (27px/1.25);
+			}
+			@media screen and (max-height: 700px) {
+				font-size: (27px/1.35);
+			}
+			@media screen and (max-width: 991px) {
+				text-align: center;
+			}
+		}
+		&__box {
+			margin-top: 70px;
+			text-align: left;
+			max-width: 360px;
+			@media screen and (max-height: 750px) {
+				margin-top: (70px/1.5);
+			}
+			@media screen and (max-height: 700px) {
+				margin-top: (70px/2.5);
+			}
+			@media screen and (max-width: 991px) {
+				margin: 80px auto auto auto;
+				text-align: center;
+			}
+			&-img {
+				background: url(../images/content/we-do/process-sprite.png)no-repeat;
+				background-size: cover;
+				width: 129px;
+				height: 135px;
+				display: block;
+				background-position: -12px;
+				@media screen and (max-height: 800px) {
+					width: (129px/1.25);
+					height: (135px/1.25);
+				}
+				@media screen and (max-height: 700px) {
+					width: (129px/1.5);
+					height: (135px/1.5);
+				}
+				@media screen and (max-width: 1199px) {
+					margin: auto;
+				}
+			}
+			&-title {
+				font: 400 normal 25px $second_font-family;
+				position: relative;
+				margin-top: 20px;
+				text-transform: uppercase;
+				@media screen and (max-height: 750px) {
+					font-size: (25px/1.25);
+				}
+				@media screen and (max-height: 700px) {
+					font-size: (25px/1.5);
+				}
+				@media screen and (max-width: 1599px) {
+					font-size: (25px/1.25);
+				}
+				@media screen and (max-width: 1365px) {
+					font-size: (25px/1.35);
+				}
+				@media screen and (max-width: 1199px) {
+					font-size: 15px;
+				}
+				@media screen and (max-width: 991px) {
+					font-size: 17px;
+				}
+				&:after {
+					position: absolute;
+					content: '';
+					width: 100%;
+					left: 0px;
+					height: 2px;
+					background: $main_color;
+					bottom: -10px;
+				}
+			}
+			&-txt {
+				font: 400 normal 26px $second_font-family;
+				margin-top: 25px;
+				text-align: left;
+				min-height: 245px;
+				@media screen and (max-height: 900px) {
+					font-size: (26px/1.25);
+					min-height: (245px/1.25);
+				}
+				@media screen and (max-height: 700px) {
+					font-size: (26px/1.35);
+					min-height: 140px;
+				}
+				@media screen and (max-width: 1599px) {
+					font-size: (26px/1.25);
+					min-height: (245px/1.25);
+				}
+				@media screen and (max-width: 1365px) {
+					font-size: (26px/1.35);
+					min-height: 200px;
+				}
+				@media screen and (max-width: 1199px) {
+					font-size: 15px;
+					min-height: 150px;
+				}
+				@media screen and (max-width: 991px) {
+					min-height: initial;
+				}
+			}
+		}
+		.btn {
+			font: 400 normal 21px $second_font-family;
+			border-radius: 0px;
+			border: 2px solid $main_color;
+			text-transform: uppercase;
+			padding: 14px 12px;
+			display: inline-block;
+			// margin-top: 60px;
+			margin-top: 30px;
+
+			// display: none;
+			@media screen and (max-height: 750px) {
+				font-size: (21px/1.25);
+				margin-top: (30px/1.25);
+			}
+			@media screen and (max-height: 650px) {
+				margin-top: (30px/3);
+			}
+			@media screen and (max-width: 1199px) {
+				width: 190px;
+			}
+		}
+		li {
+			&:nth-child(2) {
+				.process__box-img {
+					background-position: -188px;
+					@media screen and (max-height: 800px) {
+						background-position: -150px;
+					}
+					@media screen and (max-height: 700px) {
+						background-position: -125px;
+					}
+				}
+			}
+			&:nth-child(3) {
+				.process__box-img {
+					background-position: -363px;
+					@media screen and (max-height: 800px) {
+						background-position: -280px;
+					}
+					@media screen and (max-height: 700px) {
+						background-position: -233px;
+					}
+				}
+			}
+			&:nth-child(4) {
+				.process__box-img {
+					background-position: -513px;
+					@media screen and (max-height: 800px) {
+						
+						background-position: -405px;
+					}
+					@media screen and (max-height: 700px) {
+						background-position: -339px;
+					}
+				}
+			}
+		}
+	}
+	.project, .success {
+		background: $main_color;
+		@media screen and (max-width: 991px) {
+			padding: 40px 0 80px 0;
+		}
+		.main-title {
+			color: #000;
+		}
+		.second-title {
+			font: 400 normal 26px $second_font-family;
+			margin-top: 25px;
+			color: #000;
+			margin-bottom: 100px;
+			@media screen and (max-height: 880px) {
+				margin-bottom: 50px;
+			}
+			@media screen and (max-height: 850px) {
+				margin-bottom: 25px;
+				font-size: (26px/1.15);
+			}
+			@media screen and (max-height: 750px) {
+				font-size: (26px/1.25);
+			}
+			@media screen and (max-height: 700px) {
+				font-size: (26px/1.35);
+			}
+			@media screen and (max-width: 1365px) {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				font-size: 17px;
+			}
+			@media screen and (max-width: 991px) {
+				text-align: center;
+			}
+		}
+		.agile-num {
+			span {
+				position: relative;
+				// &:before {
+				// 	position: absolute;
+				// 	content: '01. INCEPTION WORKSHOPS';
+				// 	font: 400 normal 16px $second_font-family;
+				// 	color: #9b9a9a;
+				// 	right: 0px;
+				// 	transform: rotate(90deg) translate(50%, -200%);
+				// 	@media screen and (max-height: 850px) {
+				// 		font-size: 13px;
+				// 	}
+				// 	@media screen and (max-height: 650px) {
+				// 		font-size: 8px;
+				// 	}
+				// 	@media screen and (max-width: 1365px) {
+				// 		transform: rotate(90deg) translate(60%, -200%);
+				// 		font-size: 8px;
+				// 	}
+				// }					
+			}
+		}
+		&__blk {
+			max-width: 1360px;
+			li {
+				&:nth-child(2) {
+					.project__box {
+						&:before {
+							background-position: -194px;
+							@media screen and (max-width: 991px) {
+								background-position: -112px;
+							}
+						}
+					}
+				}
+				&:nth-child(3) {
+					.project__box {
+						&:before {
+							background-position: -373px;
+							@media screen and (max-width: 991px) {
+								background-position: -210px;
+							}
+						}
+					}
+				}
+				&:nth-child(4) {
+					.project__box {
+						&:before {
+							background-position: -565px;
+							@media screen and (max-width: 991px) {
+								background-position: -317px;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__box {
+			padding-left: 130px;
+			color: #000;
+			margin-top: 20px;
+			position: relative;
+			@media screen and (max-width: 991px) {
+				min-height: 90px;
+				margin-top: 50px;
+				padding-left: 85px;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				background: url(../images/content/agile/project-kickoff.png)no-repeat;
+				width: 116px;
+				height: 103px;
+				background-size: cover;
+				background-position: -14px;
+				left: 0px;
+				margin-top: 10px;
+				@media screen and (max-width: 991px) {
+					width: (116px/1.75);
+					height: (103px/1.75);
+					background-position: -8px;
+				}
+			}
+			&-name {
+				font: 600 normal 24px $second_font-family;
+				position: relative;
+				display: inline-block;
+				@media screen and (max-height: 850px) {
+					font-size: 22px;
+				}
+				@media screen and (max-height: 750px) {
+					font-size: 20px;
+				}
+				@media screen and (max-height: 700px) {
+					font-size: 18px;
+				}
+				&:before {
+					position: absolute;
+					content: '';
+					width: 100%;
+					height: 2px;
+					background: #000;
+					bottom: 0px;
+				}
+			}
+			&-text {
+				font: 400 normal 24px $first_font-family;
+				@media screen and (max-height: 850px) {
+					font-size: 22px;
+				}
+				@media screen and (max-height: 750px) {
+					font-size: 20px;
+				}
+				@media screen and (max-height: 700px) {
+					font-size: 18px;
+				}
+				@media screen and (max-width: 1199px) {
+					font-size: 16px;
+				}
+				@media screen and (max-width: 991px) {
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+	.flex-iter, .shipping {
+		text-align: right;
+		@media screen and (max-width: 991px) {
+			padding: 40px 0 80px;
+		}
+		.second-title {
+			font: 400 normal 26px $second_font-family;
+			margin-top: 25px;
+			color: $main_color;
+			@media screen and (max-height: 750px) {
+				font-size: (27px/1.25);
+			}
+			@media screen and (max-height: 700px) {
+				font-size: (27px/1.35);
+			}
+			@media screen and (max-width: 991px) {
+				text-align: center;
+			}
+		}
+		.agile-num {
+			span {
+				position: relative;
+				text-align: left;
+				float: left;
+				.dot {
+				    filter: invert(100%);
+				    right: initial;
+				    left: 85px;
+				}
+				.dot-h {
+					left: initial;
+					right: -100%;
+					width: 100%;
+				}
+			}
+		}
+		&__blk {
+			color: $main_color;
+			max-width: 1300px;
+			float: right;
+			ul {
+				li {
+					&:nth-child(2) {
+						.flex-iter__box {
+							&:before {
+								background-position: -136px;
+							}
+						}
+					}
+					&:nth-child(3) {
+						.flex-iter__box {
+							&:before {
+								background-position: -270px;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__box{
+			padding-top: 115px;
+			@media screen and (max-width: 991px) {
+				padding-top: 145px;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				background: url(../images/content/agile/flex-iter-sprite.png)no-repeat;
+				height: 85px;
+				width: 95px;
+				background-position: -5px;
+				background-size: cover;
+				top: 0px;
+				right: 16px;
+				@media screen and (max-width: 1199px) {
+					top: 15px;
+				}
+				@media screen and (max-width: 991px) {
+					top: 35px;
+					left: 0px;
+					margin: auto;
+				}
+			}
+			&-name {
+				font: 400 normal 24px $second_font-family;
+				margin-bottom: 5px;
+				display: block;
+				text-transform: uppercase;
+				@media screen and (max-width: 1199px) {
+					font-size: 16px;
+				}
+				@media screen and (max-width: 991px) {
+					text-align: center;
+				}
+			}
+			&-text {
+				font: 400 normal 26px $first_font-family;
+				position: relative;
+				padding-top: 15px;
+				@media screen and (max-height: 850px) {
+					font-size: 20px;
+				}
+				@media screen and (max-width: 1365px) {
+					font-size: 14px;
+				}
+				@media screen and (max-width: 991px) {
+					text-align: left;
+				}
+				&:before {
+					content: '';
+					width: 100%;
+					position: absolute;
+					top: 0px;
+					right: 0px;
+					background: $main_color;
+					height: 2px;
+					
+				}
+			}
+		}
+	}
+	.success {
+		.second-title {
+			margin: 10px 0;
+		}
+		&__blk {
+			max-width: 100%;
+			&-title {
+				font: 600 normal 24px $second_font-family;
+				display: inline-block;
+				color: #000;
+				line-height: 1;
+				position: relative;
+				@media screen and (max-width: 991px) {
+					margin-top: 30px;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0px;
+					right: 0px;
+					bottom: -7px;
+					height: 2px;
+					margin: auto;
+					background: #000;
+				}
+			}
+			&-text {
+				font: 400 normal 24px $first_font-family;
+				margin-top: 25px;
+				@media screen and (max-height: 880px) {
+					margin: 15px 0 0 0;
+					font-size: 21px;
+				}
+				@media screen and (max-width: 1365px) {
+					font-size: 16px;
+				}
+				@media screen and (max-width: 1199px) {
+					font-size: 15px;
+				}
+			}
+			&-img {
+				background-image: url(../images/content/agile/laptop.png);
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				min-height: 430px;
+				max-width: 90%;
+				@media screen and (max-height: 800px) {
+					min-height: 325px;
+				}
+				@media screen and (max-height: 700px) {
+					min-height: 300px;
+				}
+				@media screen and (max-width: 991px) {
+					margin-top: 60px;
+				}
+				@media screen and (max-width: 767px) {
+					min-height: 200px;
+				}
+			}
+			.btn {
+				background: #000;
+				width: 220px;
+				text-transform: uppercase;
+				font-size: 18px;
+				padding: 14px 12px;
+				margin: 25px 0 0 0;
+				border: 2px solid transparent;
+				border-radius: 0px;
+				@media screen and (max-height: 800px) {
+					margin: 15px 0 0 0;
+				}
+				@media screen and (max-width: 991px) {
+					margin: 25px auto auto auto;
+				}
+				&:hover {
+					border: 2px solid #000;
+				}
+			}
+		}
+	}
+	.shipping {
+		.agile-num {
+			span {
+				// &:before {
+				// 	right: 8px;
+				// 	top: 30px;
+				// 	font-size: 15px;
+				//     transform: rotate(90deg) translate(32%, -350%);
+				//     bottom: initial;
+				//     content: '04. shipping is the start';
+				//     text-transform: uppercase;
+				//     @media screen and (max-height: 850px) {
+				// 		right: 0px;
+				// 		top: 23px;
+				// 		font-size: 12px;
+				//     }
+				// 	@media screen and (max-height: 650px) {
+				// 		font-size: 7px;
+				// 		top: 20px;
+				// 		right: 5px;
+				// 	}
+				// }
+			}
+			i {
+				display: none;
+			}
+		}
+		&__blk {
+			max-width: inherit;
+			margin-top: 50px;
+			text-align: left;
+			float: none;
+			@media screen and (max-width: 1199px) {
+				margin-top: 10px;
+			}
+			ul {
+				li {
+					.shipping__box {
+						@media screen and (max-height: 750px) {
+							padding-top: 60px;		
+						}
+						@media screen and (max-width: 991px) {
+							padding-top: 110px;
+						}
+						&:before {
+							background: url(../images/content/agile/shipping-sprite.png)no-repeat;
+							background-size: cover;
+							right: initial;
+							left: 0px;
+							@media screen and (max-height: 750px) {
+								top: -40px;
+							}
+							@media screen and (max-width: 1199px) {
+								height: 60px;
+								width: 60px;
+								top: -8px;
+								left: initial;
+							}
+							@media screen and (max-width: 991px) {
+								top: 30px;
+								left: 0px;
+								right: 0px;
+							}
+						}
+					}
+					&:nth-child(2) {
+						.shipping__box {
+							&:before {
+								background-position: -120px;
+								@media screen and (max-width: 1199px) {
+									background-position: -85px;
+								}
+							}
+						}
+					}
+					&:nth-child(3) {
+						.shipping__box {
+							&:before {
+								background-position: -253px;
+    							width: 112px;
+    							@media screen and (max-width: 1199px) {
+    								background-position: -176px;
+    								width: 83px;
+    							}
+	    					}
+	    				}
+					}
+					&:nth-child(4) {
+						.shipping__box {
+							&:before {
+								background-position: -415px;
+								@media screen and (max-width: 1199px) {
+									background-position: -291px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&__box-name {
+			@media screen and (max-width: 1365px) {
+				font-size: 21px;
+			}
+		}
+		&__box-text {
+			font-size: 24px;
+			@media screen and (max-height: 900px) {
+				font-size: 19px;
+			}
+			@media screen and (max-width: 1599px) {
+				font-size: 16px;
+			}
+			@media screen and (max-width: 1365px) {
+				font-size: 15px;
+			}
+			@media screen and (max-width: 1199px) {
+				font-size: 14px;
+			}
+		}
+	}
+	// .agile-coop {
+	// 	background: $main_color;
+	// 	@media screen and (max-height: 619px) {
+	// 		padding: 40px 0 80px 0;
+	// 	}
+	// 	.fp-tableCell {
+	// 		@media screen and (max-height: 619px) {
+	// 			display: block;
+	// 			height: initial !important;
+	// 		}
+	// 	}
+	// 	.main-title {
+	// 		color: #000;
+	// 		border-bottom: 2px solid #000;
+	// 		margin-bottom: 30px;
+	// 		@media screen and (max-height: 700px) {
+	// 			margin-bottom: 0px;
+	// 		}
+	// 		@media screen and (max-width: 991px) {
+	// 			margin-top: 0px;
+	// 		}
+	// 	}
+	// 	.coop-types__tel {
+	// 		@include addPrefix(filter, drop-shadow(-20px 0px 20px rgba(0,0,0,0.75)));
+	// 		@media screen and (max-width: 1599px) {
+	// 			min-height: 400px;
+	// 		}
+	// 		@media screen and (max-width: 1365px) {
+	// 			min-width: 200px;
+	// 		}
+	// 		@media screen and (max-width: 1199px) {
+	// 			margin-right: 35px;
+	// 		}
+	// 	}
+	// 	.coop-types__left {
+	// 		p {
+	// 			font: 400 normal 28px $first_font-family;
+	// 			margin-top: 15px;
+	// 			@media screen and (max-height: 700px) {
+	// 				font-size: (28px/1.25);
+	// 			}
+	// 		}
+	// 		.btn {
+	// 			background: #000;
+	// 			text-transform: uppercase;
+	// 			display: inline-block;
+	// 			margin-top: 20px;
+	// 			width: 220px;
+	// 			font-size: 18px;
+	// 			padding: 15px;
+	// 			border: 2px solid transparent;
+	// 			border-radius: 0px;
+	// 			@media screen and (max-height: 700px) {
+	// 				font-size: (18px/1.25);
+	// 				height: (56px/1.25);
+	// 				padding: (15px/1.25);
+	// 				width: (220px/1.25);
+	// 				margin-top: (20px/1.25);
+	// 			}
+	// 			@media screen and (max-width: 767px) {
+	// 				display: block;
+	// 				margin: 20px auto auto auto;
+	// 			}
+	// 			&:hover {
+	// 				border: 2px solid #000;
+	// 			}
+	// 		}
+	// 	}
+	// 	.coop-types__left__box {
+	// 		margin-top: 30px;
+	// 	}
+	// 	.coop-types__left__btn {
+	// 		font-size: 36px;
+	// 		color: #000;
+	// 		padding: 0px;
+	// 		margin: 0px;
+	// 		font-weight: 600;
+	// 		@media screen and (max-height: 700px) {
+	// 			font-size: (36px/1.25);
+	// 		}
+	// 		@media screen and (max-width: 767px) {
+	// 			display: inline-block;
+	// 			&:before, &:after {
+	// 				opacity: 1;
+	// 			}
+	// 		}
+	// 		&:before, &:after {
+	// 			background: #000;
+	// 		}
+	// 	}
+	// 	.coop-types__right {
+	// 		@media screen and (max-width: 1365px) {
+	// 			display: block;
+	// 		}
+	// 		@media screen and (max-width: 991px) {
+	// 			display: none;
+	// 		}
+	// 	}
+	// }
+}
+
+
+
+
+
+
+
+.agile-page {
+	// --------------MOBILE-------------------
+	.panel-group {
+		@media screen and (max-width: 768px) {
+			display: block;
+		}
+	}
+	#MainMenu {
+		.main-menu__main {
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+	#MainMenu {
+		#mob-menu {
+		display: none;
+			@media screen and (max-width: 768px) {
+				display: block;
+			}	
+		}
+	}
+}

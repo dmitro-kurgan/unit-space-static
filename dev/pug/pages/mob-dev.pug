@@ -1,0 +1,211 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Разработка мобильных приложений для Android, iOS | Unit Space'
+  - var pageClass = 'mob-dev'
+  - var pageWrapper = 'mob-dev'
+  - var styleCSS = 'style2'
+
+block description
+  meta(name='description', content='Мобильная разработка — Unit Space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #wrapperPage
+    .content.mob-dev-pg
+      .ms-left
+        #left1.ms-section.left-section.white-section
+          h2 01. ПРИЛОЖЕНИЯ ДЛЯ IOS
+          p
+            | Будучи одним из самых популярных и больших брендов в мире, Apple задал четкие критерии своей аудитории. Приложения для клиентов высокого ценового сегмента могут быть как соло-проектами, так и неотъемлемой частью успешной маркетинговой стратегии. Мы поможем вам разработать приложения для всей платформы iOS, включая iPhone, iPad, Apple Watch и Apple TV.
+        #left2.ms-section.left-section.black-section
+          h2 02. ПРИЛОЖЕНИЯ ДЛЯ ANDROID
+          p
+            | Лидерство рынка мобильных приложений Android получил за счет ряда собственных прерогатив. Инновационность технологий, доступность широкому числу пользователей, открытость для своих клиентов – лишь несколько причин для того, чтобы обратить свой взгляд на создание собственного приложения на этой платформе.
+        #left3.ms-section.left-section.white-section.cross-platform
+          h2 03. КРОССПЛАТФОРМЕННЫЕ ПРИЛОЖЕНИЯ
+          p
+            | Для того, чтобы максимально расширить охват аудитории мы предлагаем возможность создания кроссплатформенного приложения для различных операционных систем и платформ. Не нужно ограничивать свой продукт лишь потому, что кто-то использует определенный бренд.
+          ul.cross-platform__list
+            mixin li
+              li
+                span
+            - for(var i = 0; i < 4; i++) {
+              +li
+            - }
+        #left4.ms-section.left-section.black-section.usr-exp
+          .usr-exp-slider.slider
+            mixin uxSlider(title, text)
+              div
+                .usr-exp-slider__box
+                  h4= title
+                  p= text
+            +uxSlider('User Experience First', 'We take the experience of the users very seriously. We want them to experience surprise delight.')
+            +uxSlider('Fully Branded', 'We respect the time and effort you’ve put in to build your brand and we want the software build with us to support and enhance your it. We fully integrate our applications with the look and feel of your brand.')
+            +uxSlider('Flexibility Built In', 'We know things will change over time. As you use a system, you’ll want changes and Because of this, we build all our applications so that they are ready to be adjusted. We have flexible user and permission system, simple ways to adjust the database schema and so much more.')
+            +uxSlider('Security Best Practices', 'We don’t store passwords or credit cards. We don’t install mysterious software on the We have extensive enterprise experience and we know that security is key component of successful project.')
+        #left5.ms-section.left-section.footer-left
+          .footer-left__main
+            h3 Свяжитесь с нами
+            p
+              | Для того, чтобы связаться с нами,
+              br
+              | пожалуйста, заполните следующую форму.
+            form#order-form(data-title='Заявка на сайте', data-order-form='')
+              .form-group.clearfix
+                div
+                  input#name.form-control(type='text', name='name', data-title='Имя', placeholder='Имя', data-is-included='true', required='')
+                  span.dash-bottom
+              .form-group.clearfix
+                div
+                  input#tel.form-control(type='tel', name='tel', data-title='Телефон', placeholder='Телефон', data-is-included='true', required='')
+                  span.dash-bottom
+              .form-group.clearfix
+                div
+                  input#email.form-control(type='text', name='e-mail', data-title='E-mail', placeholder='E-mail', data-is-included='true', required='')
+                  span.dash-bottom
+              .form-group.clearfix
+                div
+                  input#comment.form-control(type='text', name='comment', data-title='Комментарий', placeholder='Комментарий', data-is-included='true')
+                  span.dash-bottom
+              button.btn(type='submit') Отправить
+            //- ul.socials.clearfix
+            //-   li
+            //-     a(target='_blank', href='https://www.facebook.com/unitspace.top/') Facebook
+            //-   li
+            //-     a(target='_blank', href='https://t.me/vladislavromanov') Twitter
+            //-   li
+            //-     a(target='_blank', href='https://www.facebook.com/unitspace.top/') Linkedin
+            //-   li
+            //-     a(target='_blank', href='https://t.me/vladislavromanov') Instagram
+      .ms-right
+        #right1.ms-section
+          .right-section(style='background-image: url(./static/images/content/mob-dev/mob-dev-ios.jpg)')
+        #right2.ms-section
+          .right-section(style='background-image: url(./static/images/content/mob-dev/mob-dev-android.jpg)')
+        #right3.ms-section.cross-platform
+          .right-section(style='background-image: url(./static/images/content/mob-dev/mob-dev-cross.jpg);')
+        #right4.ms-section
+          .right-section(style='background-image: url(./static/images/content/mob-dev/mob-dev-user.jpg)')
+        #right5.ms-section.footer-right
+          .footer-right__main
+            h3 Наши контакты
+            ul
+              li
+                p Харьков, пл. Защитников Украины, 7
+              li
+                p
+                  | Телефон:
+                  a(href='tel:' + tel) +380639993211
+              li
+                p
+                  | Email:
+                  a(href='mailto:' + mail) info@unitspace.top
+            .footer-right__c
+              p
+                | Unit Space ©
+                span#year
+            .footer-right__socials
+              ul
+                +contacts
+block script
+  script(src='static/js/jquery.easings.min.js')
+  script(src='static/js/jquery.multiscroll.min.js')
+  script(src='static/js/slick.min.js')
+  script(src='static/js/wow.min.js')
+  script(type='text/javascript').
+    function changeTablet() {
+      if(matchMedia) {
+        var screen = window.matchMedia('(max-width: 992px)');
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if(screen.matches) {
+          location.href="mob-dev-mob.html";
+        }
+      }
+    };
+    changeTablet();
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //MULTISCROLL
+    $(document).ready(function() {
+      var index = 'mob-dev.html' + '#',
+      icon = document.getElementById('MenuIcon'),
+      order = document.getElementById('MenuOrder'),
+      logo = document.getElementById('HeaderLogo'),
+      h = document.getElementsByClassName('header')[0],
+      logo = document.getElementById('HeaderLogo'),
+      b = 'black',
+      hw = 'header-white',
+      hb = 'header-black';
+      icon.className += ' ' + b;
+      order.className += ' ' + b;
+      $('#wrapperPage').multiscroll({
+        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'lastPage'],
+        loopBottom: true,
+        loopTop: true,
+        sectionSelector: '.section',
+        leftSelector: '.left',
+        rightSelector: '.right',
+        onLeave: function(){
+          soundMenu();
+          if(document.URL.indexOf(index + 'secondPage') >= 0 || document.URL.indexOf(index + 'fourthPage') >= 0 || document.URL.indexOf(index + 'fifthPage') >= 0)  {
+            icon.classList.remove(b);
+            order.classList.remove(b);
+            if(document.URL.indexOf(index + 'secondPage') >= 0)  {
+              h.className += ' ' + 'header-black-layout';
+            }
+            else if(document.URL.indexOf(index + 'fourthPage') >= 0 || document.URL.indexOf(index + 'fifthPage') >= 0)  {
+              h.className += ' ' + hb;
+            }
+          }
+          else {
+            icon.className += ' ' + b;
+            order.className += ' ' + b;
+            h.classList.remove(hb);
+            h.classList.remove('header-black-layout');
+            //- h.className += ' ' + hb;
+          }
+        }
+      });
+    });
+    //SLIDER
+    $(document).ready(function() {
+      $('.usr-exp-slider').slick({
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        verticalSwiping: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: "unslick"
+          },
+          {
+            breakpoint: 1470,
+            settings: {
+              slidesToShow: 2
+            }
+          }
+        ]
+      });
+    });

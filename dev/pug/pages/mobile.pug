@@ -1,0 +1,99 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Разработка и создание сайтов | Unit Space'
+  - var pageClass = 'mobile-main'
+  - var pageWrapper = 'mobile-main'
+  - var styleCSS = 'style'
+
+block description
+  meta(name='description', content='UNIT space')
+block preloader
+  include ../modules/preloader
+
+block content
+  #fullpage
+    .content
+      section.section.banner.banner-mobile
+        //- .beta Beta
+        .background
+          img.cloud1(src='./static/images/content/main-page/stars-main.png', width='1920', height='1080', alt='Clouds')
+          canvas#main_canvas(style='position: absolute;left: 0px;right: 0px;bottom: 0px;top: 0px;width: 100%;height: 100%;margin: auto;')
+        .container
+          span.banner__logo.wow.fadeIn(data-wow-duration='3s')
+            span.banner__planet1
+              span.banner__planet1-inner
+            span.banner__planet2
+              span.banner__planet2-inner
+        .mobile-phone
+          a(href='tel:' + tel)
+            +icon('tel', ' ')
+  span#year(style='display: none')
+block script
+  script(src='static/js/jquery.fullPage.min.js')
+  script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js")
+  script(src='static/js/jquery-parallax.js')
+  script(src='static/js/stars.js')
+  script(src='static/js/wow.min.js')
+  script(type='text/javascript').
+    //PRELOADER
+    var hellopreloader = document.getElementsByClassName("hellopreloader");
+    console.log(hellopreloader);
+    function fadeOutnojquery(el) {
+    console.log('3');
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function() {
+    el.style.opacity = el.style.opacity - 0.05;
+    if (el.style.opacity <=0.05) {
+    	clearInterval(interhellopreloader);
+    	$(hellopreloader).parent().parent().hide();
+    	}},16);
+    	}
+    $(document).on('ready', function() {
+      setTimeout(function() {
+        fadeOutnojquery(hellopreloader[0]);
+      },1200);
+    });
+    //PARALLAX
+    $( document ).mousemove( function( e ) {
+      $( '.background' ).parallax( -30, e );
+      $( '.cloud1' )    .parallax( -50, e );
+      $( '.cloud2' )    .parallax( 20 , e );
+      $( '.cloud3' )    .parallax( 30 , e );
+    });
+    //FULLPAGE
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+        navigation: false,
+        scrollBar: true,
+        loopBottom: true,
+        loopTop: true,
+        responsiveWidth: 992,
+        responsiveHeight: 620,
+        scrollingSpeed: 900,
+        normalScrollElements: '.clients__right'
+      });
+    });
+    //WOW
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 0,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    //CHANGE MOBILE
+    $(window).bind('resize', function () {
+      if ($(window).width() > 768) {
+        location.href="index.html";
+      }
+    }).trigger('resize');
+    //CHANGE MOBILE
+    $(document).ready(function() {
+      if(screen.width <= 768) {
+        $('#MainMenu').addClass('mobile-header');
+      }
+    })

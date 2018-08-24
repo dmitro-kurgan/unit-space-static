@@ -1,0 +1,111 @@
+header
+  .header
+    .container
+      a(href='./')
+        +icon('logo-header-white', 'header__logo header__logo--white', 'HeaderLogo')
+        +icon('logo-header-black', 'header__logo header__logo--black', 'HeaderLogo')
+      #MenuIcon.menu-icon.wow.flipInX(data-wow-duration='2s')
+        #MenuLine.menu-icon__line
+      #MenuOrder.menu-order.wow.flipInY(data-wow-duration='2s')
+        span#MenuOrderLine.menu-order__line
+      #MainMenu.main-menu
+        .main-menu__top.clearfix
+          a(href='./', id='')
+            +icon('logo-menu', 'logo', '')
+          #close-menu.close-menu
+        .main-menu__main
+          ul.row
+            li.col-md-3
+            li.col-md-3
+              ul.main-menu__main-list
+                li Услуги
+                each title, link in nav.navPages
+                  li
+                    a(href= title)= link
+            li.col-md-3
+              ul.main-menu__main-list
+                li Компания
+                each title, link in nav.navPages2
+                  li
+                    a(href= title)= link
+            li.col-md-3
+              ul.main-menu__main-list
+                li Контакты
+                  //- a(href="contacts.html", style='position:absolute;left:0px;right:0px;top:0px;bottom:0px;')
+                each title, link in nav.navPages3
+                  li
+                    a(href= title)= link
+        #mob-menu.main-menu__main
+          #accordion(clas='panel-group')
+            mixin panel(num, name, className)
+              .panel
+                .mobile-text-title
+                  a(data-toggle='collapse', data-parent='#accordion', href='#collapse' + num)= name
+                ul(class='main-menu__main-list collapse ' + className, id='collapse' + num)
+                  block
+            +panel('1', 'Услуги', 'in')
+              each title, link in nav.navPages
+                li
+                  a(href= title)= link
+            +panel('2', 'Компания', '')
+              each title, link in nav.navPages2
+                li
+                  a(href= title)= link
+            +panel('3', 'Контакты', '')
+              each title, link in nav.navPages3
+                li
+                  a(href= title)= link
+            //- .panel
+            //-   .mobile-text-title
+            //-     a(data-toggle='collapse', data-parent='#accordion', href='#collapse1') Услуги
+            //-   ul#collapse1.main-menu__main-list.collapse.in
+            //-     each title, link in nav.navPages
+            //-       li
+            //-         a(href= title)= link
+            //- .panel
+            //-   .mobile-text-title
+            //-     a(data-toggle='collapse', data-parent='#accordion', href='#collapse2') Компания
+            //-   ul#collapse2.main-menu__main-list.collapse
+            //-     each title, link in nav.navPages2
+            //-       li
+            //-         a(href= title)= link
+            //- .panel
+            //-   .mobile-text-title
+            //-     a(data-toggle='collapse', data-parent='#accordion', href='#collapse3') Контакты
+            //-   ul#collapse3.main-menu__main-list.collapse
+            //-     each title, link in nav.navPages3
+            //-       li
+            //-         a(href= title)= link
+            //- .panel
+            //-   .mobile-text-title
+            //-     a(href="contacts.html") Контакты
+        .main-menu__bottom
+          p.main-menu__bottom-txt Software Development
+          .bg-text.container
+            .bg-text__text
+              | MENU
+        //- ul.socials.--socials-menu.clearfix
+        //-   li
+        //-     a(href='tel:+380639993211')
+        //-   li
+        //-     a(href='mailto:info@unitspace.top')
+        //-   li
+        //-     a(target='_blank', href='https://www.facebook.com/unitspace.top/')
+        //-   li
+        //-     a(target='_blank', href='https://t.me/vladislavromanov')
+      #MainOrder.main-order
+        .main-menu__top.clearfix
+          a(href='./', id='')
+            +icon('logo-menu', 'logo', '')
+          #close-order.close-menu
+        .main-menu__main
+          h3 Свяжитесь с нами
+          p
+            | Для того, чтобы связаться с нами,
+            br
+            | пожалуйста, заполните следующую форму.
+          +form
+          ul.socials.clearfix
+            each title, link in nav.socialLinks
+              li
+                a(target='_blank', href= title)= link
